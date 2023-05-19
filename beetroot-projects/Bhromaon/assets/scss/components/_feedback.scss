@@ -1,0 +1,99 @@
+.feedback{
+    background: url(./../img/BG.jpg) no-repeat;
+        background-size: cover;
+        @include breakpoint('md') {
+            background: url(./../img/BG-m.jpg) no-repeat;
+            background-size: cover;
+        }
+        @include breakpoint('sm') {
+            background: url(./../img/BG-s.jpg) no-repeat;
+            background-size: cover;
+        }
+    
+    &__content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 120px;
+        padding-bottom: 180px;
+        @include breakpoint('md') {
+            padding-top: 60px;
+            padding-bottom: 120px;
+          }
+        @include breakpoint('sm') {
+            padding-top: 60px;
+            padding-bottom: 120px;
+          }
+    }
+    &__title{
+        margin-bottom: 60px;
+    }
+
+    &__item{
+        display: flex;
+        width: 100%;
+        @include breakpoint('md') {
+            display: block;
+            width: 720px;
+          }
+        @include breakpoint('sm') {
+            display: block;
+            width: 100%;
+          }
+        
+    }
+    &__item>img{
+        width: 440px;
+        @include breakpoint('md') {
+            width: 720px;
+          }
+        @include breakpoint('sm') {
+            width: 720px;
+          }
+          @include breakpoint('xs') {
+            width: 100%;
+        }
+    }
+    &__quote{
+        background-color: $c-dark-grey;
+          @include breakpoint('xs') {
+            width: 100%;
+        }
+    }
+
+    &__wrapper{
+        padding: 48px 10px;
+        padding-left: 60px;
+        @include breakpoint('xs') {
+            padding: 48px 15px;
+            }
+    }
+
+    &__quote-title{
+        font-family: 'Josefin Sans';
+        font-weight: 400;
+        font-size: $fs-20;
+        line-height: 28px;
+        text-transform: uppercase;
+        color: $c-white;
+        margin-bottom: 16px;
+    }
+    &__quote-text{
+        max-width: 760px;
+        font-family: 'Josefin Sans';
+        font-weight: 300;
+        font-size: $fs-16;
+        line-height: 28px;
+        letter-spacing: 0.1em;
+        color: $c-white;
+        position: relative;
+        text-indent: 30px;
+    }
+    
+    &__quote-quote{
+        position: absolute;
+        top: -5px;
+        left: 0;
+    }
+}

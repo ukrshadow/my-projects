@@ -1,0 +1,22 @@
+// $breakpointsValue:
+$breakpoint-xs: 720px;
+$breakpoint-sm: 788px;
+$breakpoint-md: 980px;
+$breakpoint-lg: 1044px;
+$breakpoint-xl: 1140px;
+$breakpoint-2xl: 1340px;
+
+$breakpoints: (
+    'xs': $breakpoint-xs,
+    'sm': $breakpoint-sm,
+    'md': $breakpoint-md,
+    'lg': $breakpoint-lg,
+    'xl': $breakpoint-xl,
+    '2xl': $breakpoint-2xl
+);
+
+@mixin breakpoint($br: '2xl') {
+    @media screen and (max-width: map-get($breakpoints, $br)) {
+        @content;
+    } 
+}

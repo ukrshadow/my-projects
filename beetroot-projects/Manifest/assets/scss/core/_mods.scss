@@ -1,0 +1,12 @@
+.--right-side {
+    flex-direction: row-reverse;
+    
+         .blog-information {
+            margin-left: auto;
+            margin-right: 0;
+            @include breakpoint('md') {
+                margin-left: 0;
+            }
+        }
+}
+

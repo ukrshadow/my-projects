@@ -1,0 +1,32 @@
+.container {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 10px;
+    
+
+    @include breakpoint() {
+        max-width: $breakpoint-xl;
+    }
+
+    @include breakpoint('xl') {
+        max-width: $breakpoint-lg;
+    }
+
+    @include breakpoint('lg') {
+        max-width: $breakpoint-md;
+    }
+
+    @include breakpoint('md') {
+        max-width: $breakpoint-sm;
+    }
+
+    @include breakpoint('sm') {
+        max-width: $breakpoint-xs;
+    }
+
+    @include breakpoint('xs') {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+}

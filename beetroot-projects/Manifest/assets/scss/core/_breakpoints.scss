@@ -1,0 +1,16 @@
+$breakpoint-xs: 320px;
+$breakpoint-md: 768px;
+$breakpoint-2xl: 1440px;
+
+
+$breakpoints: (
+    'xs': $breakpoint-xs,
+    'md': $breakpoint-md,
+    '2xl': $breakpoint-2xl
+);
+
+@mixin breakpoint($br: '2xl') {
+    @media screen and (max-width: map-get($breakpoints, $br)) {
+        @content;
+    }
+}

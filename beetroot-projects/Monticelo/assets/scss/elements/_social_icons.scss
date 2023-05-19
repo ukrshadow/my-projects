@@ -1,0 +1,28 @@
+.social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    &__items {
+        border-radius: 50%;
+        border: 1px solid $c-white;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    &__items:first-child a {
+        height: 18px;
+    }
+    &__link{
+        height: 14px;
+    }
+    
+    &__items:hover {
+        filter: invert(46%) sepia(86%) saturate(2216%) hue-rotate(162deg) brightness(95%) contrast(101%);
+    }
+   
+}

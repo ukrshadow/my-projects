@@ -1,0 +1,24 @@
+.footer {
+    background-image: url(./../../assets/img/footer.png), linear-gradient(251.06deg, #7E5AFF -2.19%, #55B7FF 103.21%);
+    position: relative;
+    margin-top:-450px;
+    background-size: cover;
+    &__wrapper {
+        padding-top: 203px;
+        padding-bottom: 234px;
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        
+    }
+    &__logo{
+        margin-bottom: 41px;
+    }
+    &__copyright{
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: $c-white;
+    }
+}

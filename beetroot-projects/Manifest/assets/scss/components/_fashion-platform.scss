@@ -1,0 +1,39 @@
+.fashion-platform {
+      &__title {
+        font-family: 'RedHat-Regular';
+        font-size: 48px;
+        line-height: 64px;
+        letter-spacing: 0.05em;
+        color: $c-main-title;
+        margin-bottom: 70px; 
+    }
+    &__img{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    &__picture{
+        margin-bottom: 90px;
+    }
+}
+
+.ai-info{
+    /* padding-top: 90px; */
+    margin-bottom: 90px;
+        &__text{
+            font-family: 'latoregular';
+            font-size: 19px;
+            line-height: 32px;
+            letter-spacing: 0.05em;
+            color: #565656;
+        }
+        &__text:not(:last-child){
+            margin-bottom: 30px;
+        }
+        &__img{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+}
+
+

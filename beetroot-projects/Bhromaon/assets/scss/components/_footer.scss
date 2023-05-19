@@ -1,0 +1,28 @@
+.footer{
+    background: $c-black;
+    &__content{
+        padding: 80px 0;
+    }
+    &__title{
+        font-family: 'Josefin Sans';
+        font-weight: 700;
+        font-size: $fs-24;
+        line-height: 28px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $c-white;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+    &__subtitle{
+        font-family: 'Josefin Sans';
+        font-weight: 400;
+        font-size: $fs-14;
+        line-height: 20px;
+        letter-spacing: 0.2em;
+        color: $c-white;
+        margin-bottom: 20px;
+        text-align: center;
+        display: block;
+    }
+}

@@ -1,0 +1,85 @@
+.intro{
+    background-image:url(./../../assets/img/tu-tram-pham-202263.png), linear-gradient(243.43deg, #7E5AFF 16.9%, #55B7FF 83.27%);
+    background-size: cover;
+    &__wrapper {
+        padding-top: 53px;
+        padding-bottom: 50px;
+    }
+    &-slider{
+        width: 100%;
+        height: 210px;
+
+        &-slide{
+            display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                flex-direction: column !important;
+        }
+        &-pagination {
+            &-bullet {
+                margin: 20px 0 !important;
+                background: $c-white !important;
+                width: 10px !important;
+                height: 10px !important;
+                margin-right: 52px !important;
+            }
+        }
+        &__item{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            &-title {
+                font-family: 'Montserrat';
+                font-weight: 700;
+                font-size: 80px;
+                line-height: 98px;
+                letter-spacing: 0.1em;
+                color: $c-white;
+            }
+            &-subtitle {
+                font-family: 'Montserrat';
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 22px;
+                letter-spacing: 0.3em;
+                color: $c-white;
+            }
+        }
+
+    }
+
+    &__arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $c-white;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+
+    &-slider{
+        width: 100%;
+        height: 210px;
+        margin-bottom: 227px;
+    }
+    &-slide{
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-direction: column !important;
+    }
+    
+}
+
+.swiper-pagination-bullet{
+    margin: 40px 0 !important;
+    background: $c-white !important;
+    width: 10px !important;
+    height: 10px !important;
+    margin-right: 52px !important;
+}
+

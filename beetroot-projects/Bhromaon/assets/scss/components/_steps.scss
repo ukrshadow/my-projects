@@ -1,0 +1,66 @@
+.steps{
+    background-color: $c-dark-grey;
+
+    &__list{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding-top: 107px;
+        padding-bottom: 59px;
+        gap: 30px;
+        @include breakpoint('sm') {
+            flex-direction: column;
+            padding-top: 60px;
+         }
+       
+    }
+
+    &__item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $c-dark-grey;
+        @include breakpoint('sm') {
+            margin-bottom: 60px;
+         }
+    }
+
+    &__img{
+        width: 64px;
+        height: 64px;
+        margin-bottom: 20px;
+        fill:$c-white
+    }
+
+    &__text{
+        font-family: 'Aleo';
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 40px;
+        text-transform: capitalize;
+        color: $c-white;
+    }
+
+}
+
+.--accent{
+    fill: $c-accent;
+}
+.--red{
+    fill: $c-red;
+}
+.--blue{
+    fill: $c-blue;
+}
+
+.--bg-dash{
+    background: url(./../img/lines.svg) 49% 20% no-repeat;
+    position: relative;
+    @include breakpoint('2xl') {
+        background: url(./../img/lines.svg) 49% 26%/73% no-repeat;
+    }
+    @include breakpoint('sm') {
+       background: unset;
+    }
+    
+}

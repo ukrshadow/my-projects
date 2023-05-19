@@ -1,0 +1,40 @@
+.nav-menu {
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: $c-white;
+  }
+  &__item{
+    padding: 0 35px;
+  }
+  &__item:first-child{
+    padding-left: 0;
+  }
+  &__item:last-child{
+    padding-right: 0;
+  }
+  &__item::before{
+    content: '';
+    border: 1px solid $c-white;
+    width: 9px;
+    height: 9px;
+    display: inline-block;
+    border-radius: 100%;
+    margin-right: 15px; 
+    
+  }
+
+  &__item:hover::before{
+    background: $c-white;
+  }
+
+}
+
+.fb{
+    fill: red;
+}

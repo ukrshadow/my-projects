@@ -1,0 +1,47 @@
+.burger-nav {
+    position: relative;
+    width: 34px;
+    height: 20px;
+    background: none;
+    border: none;
+    display: none;
+  
+        @include breakpoint('2xl') {
+            display: block;
+        } 
+
+   
+
+    &__item{
+        height: 2px;
+        background: #000;
+        position: absolute;
+        width: 34px;
+        left: 0;
+        top: 50%;
+        transition: all 0.4s ease;
+    }
+    &__item:first-child{
+        top:0;
+    }
+
+    &__item:last-child{
+        top: 100%;
+    }
+
+    &.is-active{
+        .burger-nav__item {
+            opacity: 0;
+        }
+        .burger-nav__item:first-child {
+            opacity: 1;
+            transform: rotate(35deg) translate(6px, 8px);
+        }
+        .burger-nav__item:last-child {
+            opacity: 1;
+            transform: rotate(-35deg) translate(6px, -8px);
+
+        }
+    }
+    
+    }

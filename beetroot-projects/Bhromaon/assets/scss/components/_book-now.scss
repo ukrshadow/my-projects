@@ -1,0 +1,103 @@
+.book-now{
+    &__content{
+        padding-top: 220px;
+        padding-bottom: 120px;
+        display: flex;
+        align-self: center;
+        justify-content: flex-start;
+        @include breakpoint('md') {
+           display: block;
+           padding-top: 120px;
+         }
+        @include breakpoint('sm') {
+           display: block;
+           padding-top: 120px;
+         }
+    }
+
+    &__card{
+        background: $c-black-opacity;
+        width: 648px;
+        @include breakpoint('md') {
+            width:unset;
+         }
+        @include breakpoint('sm') {
+            width:unset;
+         }
+    }
+
+    &__card-wrapper{
+        padding: 44px 0;
+        padding-left: 32px;
+    }
+
+    &__country {
+        font-family: 'Josefin Sans';
+        font-weight: 300;
+        font-size: $fs-20;
+        line-height: 28px;
+        letter-spacing: 0.1em;
+        color: $c-white;
+        margin-bottom: 16px;
+        display: block;
+    }
+
+    &__title {
+        font-family: 'Josefin Sans';
+        font-weight: 400;
+        font-size: $fs-20;
+        line-height: 28px;
+        text-transform: uppercase;
+        color: $c-white;
+        margin-bottom: 16px;
+    }
+
+    &__text {
+        font-family: 'Josefin Sans';
+        font-weight: 300;
+        font-size: $fs-16;
+        line-height: 28px;
+        letter-spacing: 0.1em;
+        color: $c-white;;
+        max-width: 584px;
+        margin-bottom: 24px;
+    }
+
+    &__button{
+        width: 213px;
+        height: 60px;
+        font-size: 16px;
+        letter-spacing: 0.07em;
+    }
+}
+
+.--right{
+    justify-content: flex-end;
+}
+
+.--bg-one {
+    background: url(./../img/render-1477041_1280-1.jpg) no-repeat;
+    background-size: cover;
+    @include breakpoint('md') {
+        background: url(./../img/render-1477041_1280-1-m.jpg) no-repeat;
+        background-size: cover;
+    }
+    @include breakpoint('sm') {
+        background: url(./../img/render-1477041_1280-1-s.jpg) no-repeat;
+        background-size: cover;
+    }
+}
+
+.--bg-two {
+    background: url(./../img/spain-1859434_1280-1.jpg) no-repeat;
+    background-size: cover;
+    @include breakpoint('md') {
+        background: url(./../img/spain-1859434_1280-1-m.jpg) no-repeat;
+        background-size: cover;
+    }
+    @include breakpoint('sm') {
+        background: url(./../img/spain-1859434_1280-1-s.jpg) no-repeat;
+        background-size: cover;
+    }
+}
+

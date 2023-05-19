@@ -1,0 +1,37 @@
+.social-icons {
+    display: flex;
+
+    &__items{
+        width: 50px;
+        height: 50px;
+        border: 1px solid $c-main-text;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    &__item {
+        fill:$c-main-text;
+        height: 24px;
+        width: 100%;
+    }
+
+    &__items + &__items {
+        margin-left: 23px;
+    }
+
+    &__items:hover {
+        background:$c-main-text;
+        transition: all 0.4s ease;
+    }
+
+    &__items:hover &__item {
+        transition: all 0.4s ease;
+        fill:$c-white;
+    }
+
+    &__link {
+        display: block;
+        height: 24px;
+    }
+}

@@ -1,0 +1,183 @@
+.header {
+        background: url(./../img/HeaderBackground.jpg) no-repeat;
+        background-size: cover;
+        @include breakpoint('md') {
+            background: url(./../img/HeaderBackground-m.jpg) no-repeat;
+            background-size: cover;
+        }
+        @include breakpoint('sm') {
+            background: url(./../img/HeaderBackground-s.jpg) no-repeat;
+            background-size: cover;
+        }
+
+    &__intro{
+        padding-top: 295px;
+        padding-bottom: 124px;
+    }
+
+    &__content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+
+    &__title {
+        font-family: 'Josefin Sans';
+        font-weight: 700;
+        line-height: 52px;
+        font-size: $fs-48;
+        color: $c-white;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        font-family: 'Josefin Sans';
+        font-weight: 400;
+        line-height: 28px;
+        font-size: $fs-22;
+        color: $c-white;
+        margin-bottom: 48px;
+        letter-spacing: 0.31em;
+    }
+
+    &__search{
+        max-width: 647px;
+        position: relative;
+        padding-bottom: 211px;
+        
+
+    }
+
+    &__search-input {
+        display: block;
+        width: 611px;
+        outline: none;
+        font-family: 'Josefin Sans';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.2em;
+        color: $c-grey;
+        padding: 20px 0;
+        padding-left: 36px;
+        @include breakpoint('sm') {
+            width: 400px;
+            padding-left: 10px;
+            letter-spacing: 0.1em;
+        }
+        @include breakpoint('xs') {
+            width: 300px;
+            padding-left: 10px;
+            letter-spacing: unset;
+        }
+        
+        
+    }
+
+    &__search-btn{
+        position: absolute;
+        top: 6px;
+        right: 4px;
+        display: inline-flex;
+        align-items: center;
+        width: 139px;
+        justify-content: center;
+        height: 52px;
+        letter-spacing: 0.1em;
+        font-size: 14px;
+           @include breakpoint('xs') {
+            width: 100px;
+            }
+    }
+
+    &__search-img{
+        width: 16px;
+        height: 16px;
+        fill: $c-white;
+        margin-right: 18px;
+        @include breakpoint('xs') {
+            margin-right: 10px;
+            }
+    }
+    &__scroll{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: scroll-dawn 2s infinite;
+
+    }
+    &__scroll-down{
+        font-family: 'Josefin Sans';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.2em;
+        color: $c-white;
+        margin-bottom: 4px;
+    }
+    &__scroll-arrow{
+        width: 13.6px;
+        height: 8.28px;
+    }
+
+    &__nav {
+        background: $c-accent;
+        
+    }
+    &__nav-content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include breakpoint('sm') {
+            flex-direction: column;
+            padding-top: 32px;
+        }
+    }
+
+    &__nav-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 32px 0;
+    }
+    &__nav-item {
+        font-family: 'Aleo';
+        font-weight: 400;
+        font-size: $fs-14;
+        line-height: 20px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $c-white;
+    }
+    &__nav-item:not(:first-child){
+        padding: 0 20px;
+        
+    }
+    &__nav-item:first-child{
+        padding-right: 20px;
+    }
+
+    &__nav-item:last-child{
+        padding-right: 0;
+    }
+
+    &__nav-link {
+        display: block;
+        color: inherit;
+    }
+}
+
+@keyframes scroll-dawn {
+    from, to  {
+        transform: translateY(0);
+    }
+    50%{
+    transform: translateY(50px)
+}
+   
+}
+
+

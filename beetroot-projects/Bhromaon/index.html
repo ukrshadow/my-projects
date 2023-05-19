@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="It's my homework project">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon.ico">
+    <link rel="stylesheet" href="./assets/style/fonts.css">
+    <link rel="stylesheet" href="./assets/style/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;"
+        xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <symbol viewBox="0 0 64 64" id="search">
+               <path d="M63.1296 55.3321L50.6662 42.8708C50.1037 42.3084 49.3411 41.9959 48.541 41.9959H46.5034C49.9537 37.5838 52.0038 32.0344 52.0038 25.9975C52.0038 11.6364 40.3655 0 26.0019 0C11.6384 0 0 11.6364 0 25.9975C0 40.3586 11.6384 51.9949 26.0019 51.9949C32.0398 51.9949 37.5903 49.9451 42.0031 46.4955V48.5328C42.0031 49.3327 42.3156 50.0951 42.8781 50.6576L55.3416 63.1188C56.5166 64.2937 58.4168 64.2937 59.5794 63.1188L63.1171 59.5817C64.2922 58.4068 64.2922 56.507 63.1296 55.3321ZM26.0019 41.9959C17.1638 41.9959 10.0007 34.8466 10.0007 25.9975C10.0007 17.1608 17.1513 9.99902 26.0019 9.99902C34.84 9.99902 42.0031 17.1483 42.0031 25.9975C42.0031 34.8341 34.8526 41.9959 26.0019 41.9959Z" />
+            </symbol>
+            <symbol viewBox="0 0 14 10" id="header-arrow">
+                <path d="M6.46966 8.92111L0.396437 2.84786C0.103531 2.55496 0.103531 2.08008 0.396437 1.78721L1.10478 1.07886C1.39719 0.786458 1.87109 0.785895 2.16419 1.07761L7 5.89077L11.8358 1.07761C12.1289 0.785895 12.6028 0.786458 12.8952 1.07886L13.6035 1.78721C13.8964 2.08011 13.8964 2.55499 13.6035 2.84786L7.53034 8.92111C7.23744 9.21399 6.76256 9.21399 6.46966 8.92111Z" fill="white"/>
+            </symbol>
+            <symbol viewBox="0 0 62 62" id="checkcircle">
+                <path d="M31 0C13.8791 0 0 13.8791 0 31C0 48.1209 13.8791 62 31 62C48.1209 62 62 48.1209 62 31C62 13.8791 48.1209 0 31 0ZM31 6C44.8165 6 56 17.1814 56 31C56 44.8165 44.8186 56 31 56C17.1835 56 6 44.8186 6 31C6 17.1835 17.1814 6 31 6ZM48.5255 22.2834L45.7085 19.4436C45.1251 18.8555 44.1754 18.8516 43.5872 19.4351L25.9182 36.9621L18.4443 29.4275C17.8609 28.8394 16.9111 28.8355 16.323 29.4189L13.4831 32.2359C12.895 32.8192 12.8911 33.769 13.4746 34.3573L24.8223 45.7967C25.4056 46.3849 26.3554 46.3887 26.9435 45.8052L48.5171 24.4048C49.1051 23.8213 49.1089 22.8715 48.5255 22.2834Z" />
+            </symbol>
+            <symbol viewBox="0 0 60 64" id="thumbs-up">
+                <path d="M58.2837 35.8363C59.38 33.98 60 32 60 29.6063C60 24.1044 55.3477 18.9088 49.2725 18.9088H44.7125C45.3275 17.3075 45.8187 15.3925 45.8187 13.0913C45.8187 3.992 41.1075 0 33.91 0C26.2091 0 26.6484 11.8666 24.94 13.575C22.0966 16.4184 18.7381 21.8809 16.345 24H4C1.79087 24 0 25.7909 0 28V58C0 60.2091 1.79087 62 4 62H12C13.8616 62 15.426 60.7282 15.8722 59.0062C21.4359 59.1314 25.2547 63.9987 38.0975 63.9987C39 63.9987 40 64 40.875 64C50.5146 64 54.8732 59.0721 54.9925 52.0838C56.6574 49.7806 57.5299 46.6935 57.16 43.71C58.3918 41.4035 58.868 38.6671 58.2837 35.8363ZM50.565 42.565C52.135 45.2062 50.7225 48.7412 48.8225 49.7612C49.785 55.8587 46.6215 57.9987 42.1825 57.9987H37.455C28.5001 57.9987 22.7014 53.2713 16 53.2713V30H17.365C20.91 30 25.8625 21.1387 29.1825 17.8175C32.7275 14.2725 31.5462 8.36375 33.91 6C39.8187 6 39.8187 10.1225 39.8187 13.0913C39.8187 17.9875 36.2738 20.1813 36.2738 24.9088H49.2725C51.9112 24.9088 53.9888 27.2725 54 29.6362C54.0112 31.9987 52.3975 34.3625 51.2163 34.3625C52.9024 36.1819 53.2626 40.017 50.565 42.565ZM11 54C11 55.6569 9.65687 57 8 57C6.34312 57 5 55.6569 5 54C5 52.3431 6.34312 51 8 51C9.65687 51 11 52.3431 11 54Z"/>
+            </symbol>
+            <symbol viewBox="0 0 36 64" id="fb">
+                <path d="M32.8925 36L34.67 24.4175H23.5562V16.9013C23.5562 13.7325 25.1087 10.6438 30.0862 10.6438H35.1387V0.7825C35.1387 0.7825 30.5537 0 26.17 0C17.0175 0 11.035 5.5475 11.035 15.59V24.4175H0.861237V36H11.035V64H23.5562V36H32.8925Z"/>
+            </symbol>
+            <symbol viewBox="0 0 64 52" id="tw">
+                <path d="M57.4212 12.9645C57.4619 13.533 57.4619 14.1016 57.4619 14.6701C57.4619 32.0101 44.264 51.9899 20.1421 51.9899C12.7106 51.9899 5.80713 49.8375 0 46.1016C1.05587 46.2234 2.071 46.264 3.1675 46.264C9.29938 46.264 14.9441 44.193 19.4517 40.66C13.6852 40.5381 8.85275 36.7615 7.18775 31.5635C8 31.6853 8.81213 31.7665 9.665 31.7665C10.8426 31.7665 12.0204 31.604 13.1167 31.3199C7.10662 30.1015 2.59888 24.8224 2.59888 18.4468V18.2844C4.345 19.259 6.37563 19.8681 8.52775 19.9493C4.99475 17.5939 2.68012 13.5736 2.68012 9.02538C2.68012 6.58888 3.32975 4.35538 4.46688 2.40613C10.9237 10.3655 20.6294 15.5634 31.5125 16.132C31.3095 15.1574 31.1876 14.1423 31.1876 13.127C31.1876 5.8985 37.0354 0.0102539 44.3044 0.0102539C48.081 0.0102539 51.4921 1.594 53.8881 4.15238C56.8525 3.58388 59.6951 2.48738 62.213 0.984879C61.2383 4.03063 59.1672 6.589 56.4465 8.21325C59.0861 7.92913 61.6445 7.198 63.9997 6.18288C62.2132 8.78175 59.9796 11.0964 57.4212 12.9645Z"/>
+            </symbol>
+            <symbol viewBox="0 0 56 56" id="ln">
+                <path d="M52 0H3.9875C1.7875 0 0 1.8125 0 4.0375V51.9625C0 54.1875 1.7875 56 3.9875 56H52C54.2 56 56 54.1875 56 51.9625V4.0375C56 1.8125 54.2 0 52 0ZM16.925 48H8.625V21.275H16.9375V48H16.925ZM12.775 17.625C10.1125 17.625 7.9625 15.4625 7.9625 12.8125C7.9625 10.1625 10.1125 8 12.775 8C15.425 8 17.5875 10.1625 17.5875 12.8125C17.5875 15.475 15.4375 17.625 12.775 17.625ZM48.0375 48H39.7375V35C39.7375 31.9 39.675 27.9125 35.425 27.9125C31.1 27.9125 30.4375 31.2875 30.4375 34.775V48H22.1375V21.275H30.1V24.925H30.2125C31.325 22.825 34.0375 20.6125 38.075 20.6125C46.475 20.6125 48.0375 26.15 48.0375 33.35V48Z"/>
+            </symbol>
+            <symbol viewBox="0 0 70 48" id="youtube">
+                <path d="M67.7068 7.51038C66.9217 4.55412 64.6084 2.22587 61.6713 1.43575C56.3475 0 34.9999 0 34.9999 0C34.9999 0 13.6524 0 8.32853 1.43575C5.39141 2.226 3.07816 4.55412 2.29303 7.51038C0.866531 12.8687 0.866531 24.0485 0.866531 24.0485C0.866531 24.0485 0.866531 35.2282 2.29303 40.5866C3.07816 43.5429 5.39141 45.7741 8.32853 46.5643C13.6524 48 34.9999 48 34.9999 48C34.9999 48 56.3474 48 61.6713 46.5643C64.6084 45.7741 66.9217 43.5429 67.7068 40.5866C69.1333 35.2282 69.1333 24.0485 69.1333 24.0485C69.1333 24.0485 69.1333 12.8687 67.7068 7.51038ZM28.018 34.1989V13.8981L45.8604 24.0488L28.018 34.1989Z"/>
+            </symbol>
+            <symbol viewBox="0 0 62 62" id="pint">
+                <path d="M62 31C62 48.125 48.125 62 31 62C27.8 62 24.725 61.5125 21.825 60.6125C23.0875 58.55 24.975 55.175 25.675 52.4875C26.05 51.0375 27.6 45.1125 27.6 45.1125C28.6125 47.0375 31.5625 48.675 34.7 48.675C44.05 48.675 50.7875 40.075 50.7875 29.3875C50.7875 19.15 42.425 11.4875 31.675 11.4875C18.3 11.4875 11.1875 20.4625 11.1875 30.25C11.1875 34.8 13.6125 40.4625 17.475 42.2625C18.0625 42.5375 18.375 42.4125 18.5125 41.85C18.6125 41.425 19.1375 39.3125 19.375 38.3375C19.45 38.025 19.4125 37.75 19.1625 37.45C17.9 35.8875 16.875 33.0375 16.875 30.375C16.875 23.5375 22.05 16.925 30.875 16.925C38.4875 16.925 43.825 22.1125 43.825 29.5375C43.825 37.925 39.5875 43.7375 34.075 43.7375C31.0375 43.7375 28.75 41.225 29.4875 38.1375C30.3625 34.45 32.05 30.475 32.05 27.8125C32.05 25.4375 30.775 23.45 28.125 23.45C25.0125 23.45 22.5125 26.6625 22.5125 30.975C22.5125 33.725 23.4375 35.575 23.4375 35.575C23.4375 35.575 20.375 48.55 19.8125 50.975C19.1875 53.65 19.4375 57.425 19.7 59.875C8.175 55.3625 0 44.1375 0 31C0 13.875 13.875 0 31 0C48.125 0 62 13.875 62 31Z"/>
+            </symbol>
+        </defs>
+    </svg>
+    <header class="header">
+        <div class="header__intro">
+            <div class="container">
+                <div class="header__content">
+                    <h1 class="header__title">Bhromaon</h1>
+                    <span class="header__subtitle">Safe Travel Anywhere</span>
+                    <form class="header__search">
+                        <input type="text" class="header__search-input" placeholder="Search Your Travel Destination">
+                        <button class="btn header__search-btn" type="submit">
+                            <svg class="header__search-img">
+                                <use xlink:href="#search"></use>
+                            </svg>
+                            <span>Search</span>
+                        </button>
+                    </form>
+                    <div class="header__scroll">
+                        <span class="header__scroll-down">Scroll Down</span>
+                        <svg class="header__scroll-arrow">
+                            <use xlink:href="#header-arrow"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="header__nav">
+            <div class="container">
+                <div class="header__nav-content">
+                    <div class="header__logo">
+                        <a href="#" class="header__logo-link">
+                            <img src="./assets/img/logo.png" alt="#">
+                        </a>
+                    </div>
+                    <ul class="header__nav-list is-open" id="nav">
+                        <li class="header__nav-item"><a href="#" class="header__nav-link">Who We Are</a></li>
+                        <li class="header__nav-item"><a href="#" class="header__nav-link">What We Do</a></li>
+                        <li class="header__nav-item"><a href="#" class="header__nav-link">Travel With Us</a></li>
+                        <li class="header__nav-item"><a href="#" class="header__nav-link">Contact Us</a></li>
+                    </ul>
+                   <!--  <div class="header__burger">
+                        <button class="burger-nav" id="burger" onclick="burgerMenu()">
+                            <span class="burger-nav__item"></span>
+                            <span class="burger-nav__item"></span>
+                            <span class="burger-nav__item"></span>
+                        </button>
+                    </div> -->
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="choose-us">
+            <div class="container">
+                <div class="choose-us__body">
+                    <div class="choose-us__info">
+                        <h2 class="choose-us__title section-title">Why Choose Us</h2>
+                        <p class="choose-us__text">Tion and dislike men who are so beguiled and demoralized by desire by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee</p>
+                        <p class="choose-us__text"> Ddislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that.</p>
+                        <button class="choose-us__button btn">Explore Places </button>
+                    </div>
+                    <div class="choose-us__img">
+                        <img class="choose-us__img-upper" src="./assets/img/Imageupper.jpg" alt="#">
+                        <img  class="choose-us__img-lower" src="./assets/img/Imagelower.jpg" alt="#">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="steps">
+            <div class="container">
+                <div class="steps__list --bg-dash">
+                    <div class="steps__item">
+                        <svg class="steps__img --accent">
+                            <use xlink:href="#search"></use>
+                        </svg>
+                        <span class="steps__text">Search Places</span>
+                    </div>
+                    <div class="steps__item">
+                        <svg class="steps__img --red">
+                            <use xlink:href="#checkcircle"></use>
+                        </svg>
+                        <span class="steps__text">Select Places</span>
+                    </div>
+                    <div class="steps__item">
+                        <svg class="steps__img --blue">
+                            <use xlink:href="#thumbs-up"></use>
+                        </svg>
+                        <span class="steps__text">Book & Enjoy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="book-now --bg-one">
+            <div class="container">
+                <div class="book-now__content">
+                    <div class="book-now__card">
+                        <div class="book-now__card-wrapper">
+                            <span class="book-now__country">Spain</span>
+                            <h3 class="book-now__title">Grand Spain Madrid</h3>
+                            <p class="book-now__text">But I must explain to you how all this mistaken idea of account to denouncing pleasure and praising pain was account  born and I account will give you a complete account of the system</p>
+                            <button class="btn book-now__button">book now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="book-now --bg-two">
+            <div class="container">
+                <div class="book-now__content --right">
+                    <div class="book-now__card">
+                        <div class="book-now__card-wrapper">
+                            <span class="book-now__country">Spain</span>
+                            <h3 class="book-now__title">Grand Spain Madrid</h3>
+                            <p class="book-now__text">But I must explain to you how all this mistaken idea of account to denouncing pleasure and praising pain was account  born and I account will give you a complete account of the system</p>
+                            <button class="btn book-now__button">book now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="feedback">
+            <div class="container">
+                <div class="feedback__content">
+                    <h2 class="feedback__title section-title">What Our Tourists Say</h2>
+                    <div class="feedback__list">
+                        <div class="feedback__item">
+                            <picture>
+                                <source media="(max-width: 767px)" srcset="./assets/img/ReviewPhoto-s.jpg">
+                                <source media="(max-width: 1140px)" srcset="./assets/img/ReviewPhoto-m.jpg">
+                                <img src="./assets/img/ReviewPhoto.jpg" alt="#">
+                            </picture>
+                            
+                            <div class="feedback__quote">
+                                <div class="feedback__wrapper">
+                                    <h3 class="feedback__quote-title">Sam Sumon</h3>
+                                    <p class="feedback__quote-text"> 
+                                        <img src="./assets/img/Vector.svg" class="feedback__quote-quote" alt="#"> 
+                                        But I must explain to you how all this mistaken idea of account to denouncinpleasure and praising pain  But I must explain to you how all this mistaken idea of account to nai denouncing pleasure and praising pain was account  born and I account will give you a complete account of the system was account  born and I account will give you a nai the complete account of the system
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <h3 class="footer__title">Bhromaon</h3>
+                <span class="footer__subtitle">Safe Travel Anywhere</span>
+                <div class="footer__social-icons social-icons">
+                    <div class="social-icons__items">
+                    <a href="#" class="social-icons__link" aria-label="social-icons__link"><svg class="social-icons__item"><use xlink:href="#fb"></use></svg></a> 
+                    </div>
+                    <div class="social-icons__items">
+                    <a href="#" class="social-icons__link" aria-label="social-icons__link"><svg class="social-icons__item"><use xlink:href="#tw"></use></svg></a>
+                    </div>
+                    <div class="social-icons__items">
+                    <a href="#" class="social-icons__link" aria-label="social-icons__link"><svg class="social-icons__item"><use xlink:href="#ln"></use></svg></a>
+                    </div>
+                    <div class="social-icons__items">
+                    <a href="#" class="social-icons__link" aria-label="social-icons__link"><svg class="social-icons__item"><use xlink:href="#youtube"></use></svg></a>
+                    </div>
+                    <div class="social-icons__items">
+                    <a href="#" class="social-icons__link" aria-label="social-icons__link"><svg class="social-icons__item"><use xlink:href="#pint"></use></svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- <script src="./assets/scripts/scripts.js"></script> -->
+</body>
+</html>
