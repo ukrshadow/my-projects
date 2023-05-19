@@ -1,5 +1,5 @@
 "use strict"
-
+/* TODO:  adaptive */
 const CLASS_NAMES = {
     container: 'container',
     header: {
