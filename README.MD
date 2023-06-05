@@ -1,9 +1,9 @@
 # My projects
-Live Preview "Bhromaon" - [Click Here](./beetroot-projects/Bhromaon)
+Live Preview "Bhromaon" - [Click Here](https://ukrshadow.github.io/my-projects/beetroot-projects/Bhromaon)
 <br />
-Live Preview "Manifest" - [Click Here](./beetroot-projects/Manifest)
+Live Preview "Manifest" - [Click Here](https://ukrshadow.github.io/my-projects/beetroot-projects/Manifest)
 <br />
-Live Preview "Monticelo" - [Click Here](./beetroot-projects/Monticelo)
+Live Preview "Monticelo" - [Click Here](https://ukrshadow.github.io/my-projects/beetroot-projects/Monticelo)
 <br />
-Live Preview "Productly" - [Click Here](./beetroot-projects/Productly)
+Live Preview "Productly" - [Click Here](https://ukrshadow.github.io/my-projects/beetroot-projects/Productly)
 <br />
