@@ -1,27 +1,29 @@
 .header {
-        background: url(./../img/HeaderBackground.jpg) no-repeat;
-        background-size: cover;
-        @include breakpoint('md') {
-            background: url(./../img/HeaderBackground-m.jpg) no-repeat;
-            background-size: cover;
-        }
-        @include breakpoint('sm') {
-            background: url(./../img/HeaderBackground-s.jpg) no-repeat;
-            background-size: cover;
-        }
+    background: url(./../img/HeaderBackground.jpg) no-repeat;
+    background-size: cover;
 
-    &__intro{
+    @include breakpoint('md') {
+        background: url(./../img/HeaderBackground-m.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    @include breakpoint('sm') {
+        background: url(./../img/HeaderBackground-s.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    &__intro {
         padding-top: 295px;
         padding-bottom: 124px;
     }
 
-    &__content{
+    &__content {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
     }
-    
+
 
     &__title {
         font-family: 'Josefin Sans';
@@ -43,11 +45,11 @@
         letter-spacing: 0.31em;
     }
 
-    &__search{
+    &__search {
         max-width: 647px;
         position: relative;
         padding-bottom: 211px;
-        
+
 
     }
 
@@ -63,21 +65,23 @@
         color: $c-grey;
         padding: 20px 0;
         padding-left: 36px;
+
         @include breakpoint('sm') {
             width: 400px;
             padding-left: 10px;
             letter-spacing: 0.1em;
         }
+
         @include breakpoint('xs') {
             width: 300px;
             padding-left: 10px;
             letter-spacing: unset;
         }
-        
-        
+
+
     }
 
-    &__search-btn{
+    &__search-btn {
         position: absolute;
         top: 6px;
         right: 4px;
@@ -88,28 +92,32 @@
         height: 52px;
         letter-spacing: 0.1em;
         font-size: 14px;
-           @include breakpoint('xs') {
+
+        @include breakpoint('xs') {
             width: 100px;
-            }
+        }
     }
 
-    &__search-img{
+    &__search-img {
         width: 16px;
         height: 16px;
         fill: $c-white;
         margin-right: 18px;
+
         @include breakpoint('xs') {
             margin-right: 10px;
-            }
+        }
     }
-    &__scroll{
+
+    &__scroll {
         display: flex;
         flex-direction: column;
         align-items: center;
         animation: scroll-dawn 2s infinite;
 
     }
-    &__scroll-down{
+
+    &__scroll-down {
         font-family: 'Josefin Sans';
         font-weight: 400;
         font-size: 14px;
@@ -118,19 +126,22 @@
         color: $c-white;
         margin-bottom: 4px;
     }
-    &__scroll-arrow{
+
+    &__scroll-arrow {
         width: 13.6px;
         height: 8.28px;
     }
 
     &__nav {
         background: $c-accent;
-        
+
     }
-    &__nav-content{
+
+    &__nav-content {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
         @include breakpoint('sm') {
             flex-direction: column;
             padding-top: 32px;
@@ -143,6 +154,7 @@
         justify-content: space-between;
         padding: 32px 0;
     }
+
     &__nav-item {
         font-family: 'Aleo';
         font-weight: 400;
@@ -152,15 +164,17 @@
         text-transform: uppercase;
         color: $c-white;
     }
-    &__nav-item:not(:first-child){
+
+    &__nav-item:not(:first-child) {
         padding: 0 20px;
-        
+
     }
-    &__nav-item:first-child{
+
+    &__nav-item:first-child {
         padding-right: 20px;
     }
 
-    &__nav-item:last-child{
+    &__nav-item:last-child {
         padding-right: 0;
     }
 
@@ -171,13 +185,14 @@
 }
 
 @keyframes scroll-dawn {
-    from, to  {
+
+    from,
+    to {
         transform: translateY(0);
     }
-    50%{
-    transform: translateY(50px)
-}
-   
-}
 
+    50% {
+        transform: translateY(50px)
+    }
 
+}

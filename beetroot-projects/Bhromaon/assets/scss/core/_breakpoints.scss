@@ -18,5 +18,5 @@ $breakpoints: (
 @mixin breakpoint($br: '2xl') {
     @media screen and (max-width: map-get($breakpoints, $br)) {
         @content;
-    } 
+    }
 }

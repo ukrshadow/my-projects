@@ -2,42 +2,35 @@
     position: relative;
     background: url(../../assets/img/bg-image.jpg) left top/100% 100% no-repeat;
     padding: 100px 0 380px 0;
-        @include breakpoint() {
-            padding: 70px 0 162px 0;
-        }
-        @include breakpoint('md') {
-            padding: 70px 0 230px 0;
-        }
+
+    @include breakpoint() {
+        padding: 70px 0 162px 0;
+    }
+
+    @include breakpoint('md') {
+        padding: 70px 0 230px 0;
+    }
 
     &__title {
-        font-family: 'RedHat-bold' ;
+        font-family: 'RedHat-bold';
         font-weight: 600;
         font-size: 48px;
         line-height: 64px;
         letter-spacing: 0.05em;
         color: $c-main-title;
         max-width: 770px;
-            @include breakpoint() {
-                font-size: 36px;
-                line-height: 50px;
-                letter-spacing: 0.05em; 
-                max-width: 600px;
-            }
-            @include breakpoint('md') {
-                font-size: 30px;
-                
-            }
+
+        @include breakpoint() {
+            font-size: 36px;
+            line-height: 50px;
+            letter-spacing: 0.05em;
+            max-width: 600px;
+        }
+
+        @include breakpoint('md') {
+            font-size: 30px;
+
+        }
     }
-
-
-
-
-
-
-
-
-
-
-
 
 }

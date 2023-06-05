@@ -1,40 +1,42 @@
-.nav-menu{
+.nav-menu {
     margin: 0 84px 0 auto;
     padding: 1px 0;
+
+    @include breakpoint('2xl') {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        min-height: 100vh;
+        z-index: 1000;
+        background: $c-white;
+        margin: unset;
+        width: 300px;
+        text-align: center;
+        transform: translateX(-100vw);
+    }
+
+    &.is-open {
         @include breakpoint('2xl') {
-            position: fixed;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            min-height: 100vh;
-            z-index: 1000;
-            background: $c-white;
-            margin:unset;
-            width: 300px;
-            text-align: center;
-            transform: translateX(-100vw);
-        }  
-        &.is-open {
-            @include breakpoint('2xl') {
-                
-                transform: translateX(0);
-            }  
+
+            transform: translateX(0);
         }
-        
+    }
+
     &__list {
         display: flex;
         justify-content: flex-start;
         align-items: center;
         margin-right: auto;
         font-size: 0;
-            
-            @include breakpoint('2xl') {
-                display:block;
-                margin-bottom: 40px;
-            }  
+
+        @include breakpoint('2xl') {
+            display: block;
+            margin-bottom: 40px;
+        }
     }
 
-    
+
 
     &__item {
         font-family: 'latoregular';
@@ -45,36 +47,39 @@
         text-transform: uppercase;
         margin-right: 21px;
         position: relative;
+
         @include breakpoint('2xl') {
             font-size: 22px;
             font-weight: 500;
             line-height: 31px;
         }
-      
+
     }
 
-    &__item + &__item{
+    &__item+&__item {
         margin: 0 21px;
     }
 
-    &__item:last-child{
+    &__item:last-child {
         margin-right: 0px;
     }
-    
 
-    &__item, &__item + &__item, &__item:last-child {
+
+    &__item,
+    &__item+&__item,
+    &__item:last-child {
         @include breakpoint('2xl') {
             margin: 0;
             padding: 20px;
+        }
     }
-}
 
     &__link {
         color: $c-main-title;
         display: block;
     }
 
-    &__item:hover:after{
+    &__item:hover:after {
         content: "";
         background: url(../../assets/img/line.svg) center bottom no-repeat;
         transition: all 0.7s ease;
@@ -83,21 +88,21 @@
         display: block;
         position: absolute;
         top: 21px;
-            @include breakpoint('2xl') {
-                top: 52px;
-                left: 0;
-            }
+
+        @include breakpoint('2xl') {
+            top: 52px;
+            left: 0;
+        }
     }
-    
+
     &__social.social-icons {
-            display: none;
-                @include breakpoint('2xl') {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-            } 
-            
+        display: none;
+
+        @include breakpoint('2xl') {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
 }
-
-

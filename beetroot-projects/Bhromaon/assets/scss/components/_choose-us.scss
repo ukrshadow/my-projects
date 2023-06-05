@@ -1,39 +1,42 @@
-.choose-us{
+.choose-us {
     background: url(./../img/WhyBackground.jpg) no-repeat;
     background-size: cover;
+
     @include breakpoint('md') {
         background: url(./../img/WhyBackground-m.jpg) no-repeat;
         background-size: cover;
     }
+
     @include breakpoint('sm') {
         background: url(./../img/WhyBackground-s.jpg) no-repeat;
         background-size: cover;
     }
 
-    &__body{
+    &__body {
         display: flex;
         align-items: center;
         justify-content: space-between;
         column-gap: 21px;
         padding-top: 124px;
         padding-bottom: 141px;
+
         @include breakpoint('sm') {
             flex-direction: column-reverse;
             padding: 60px 0;
         }
     }
-  
-    &__info{
+
+    &__info {
         @include breakpoint('sm') {
-           text-align: center;
+            text-align: center;
         }
     }
 
-    &__title{
+    &__title {
         margin-bottom: 24px;
     }
 
-    &__text{
+    &__text {
         font-family: 'Josefin Sans';
         font-weight: 300;
         font-size: $fs-16;
@@ -42,24 +45,28 @@
         color: $c-white;
         margin-bottom: 28px;
         max-width: 648px;
+
         @include breakpoint('lg') {
             max-width: 550px;
         }
+
         @include breakpoint('sm') {
             max-width: 720px;
-         }
+        }
     }
+
     &__text:nth-child(3) {
         margin-bottom: 32px;
     }
 
-    &__img{
+    &__img {
         flex-direction: column;
         margin: 0 auto;
         display: flex;
         position: relative;
         width: 424px;
         height: 456px;
+
         @include breakpoint('sm') {
             display: flex;
             gap: 24px;
@@ -69,42 +76,51 @@
             flex-direction: unset;
             margin-bottom: 32px;
         }
+
         @include breakpoint('md') {
-           gap: 14px;
-          }
+            gap: 14px;
+        }
     }
-    &__img-upper{
+
+    &__img-upper {
         position: absolute;
         top: 0;
         left: 0;
+
         @include breakpoint('md') {
             width: 300px;
-           }
-        @include breakpoint('sm') {
-            position:unset
         }
+
+        @include breakpoint('sm') {
+            position: unset
+        }
+
         @include breakpoint('xs') {
             width: 47%;
         }
-        
+
     }
-    &__img-lower{
+
+    &__img-lower {
         position: absolute;
         bottom: 0;
         right: 0;
+
         @include breakpoint('md') {
             width: 300px;
             left: 0;
-           }
-        @include breakpoint('sm') {
-            position:unset
         }
+
+        @include breakpoint('sm') {
+            position: unset
+        }
+
         @include breakpoint('xs') {
             width: 47%;
         }
     }
 
-    &__button{
+    &__button {
         width: 213px;
         font-weight: 400;
         font-size: 16px;

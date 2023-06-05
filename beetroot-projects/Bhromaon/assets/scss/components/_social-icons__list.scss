@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
 
-    &__items{
+    &__items {
         width: 37px;
         height: 32px;
         display: flex;
@@ -12,18 +12,18 @@
     }
 
     &__item {
-        fill:$c-white;
+        fill: $c-white;
         height: 32px;
         width: 100%;
     }
 
-    &__items + &__items {
+    &__items+&__items {
         margin-left: 32px;
     }
 
     &__items:hover &__item {
         transition: all 0.2s ease;
-        fill:$c-accent;
+        fill: $c-accent;
     }
 
     &__link {

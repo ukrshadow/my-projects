@@ -125,6 +125,7 @@ headerNav.appendChild(navList).classList.add(CLASS_NAMES.header.navList);
 const menuItems = ['ABOUT US', 'PROJECTS', 'NEWS', 'CONTACT'];
 
 menuItemCreating()
+
 function menuItemCreating() {
     menuItems.forEach((el, index) => {
         const navItem = document.createElement(CLASS_TAG.li);
@@ -148,7 +149,7 @@ const socialIconTitle = ['fb', 'twitter', 'instagram']
 createSocialIconsHeader()
 
 function createSocialIconsHeader() {
-    socialIconTitle.forEach((el,i) => {
+    socialIconTitle.forEach((el, i) => {
         const socIconItems = document.createElement(CLASS_TAG.div);
         const socIconimg = document.createElement(CLASS_TAG.img);
         headerSocial.appendChild(socIconItems).classList.add(`${CLASS_NAMES.header.socialIcons}__items`);
@@ -157,13 +158,12 @@ function createSocialIconsHeader() {
         socialIconItemLink.classList.add(`${CLASS_NAMES.header.socialIcons}__link`)
         socIconimg.classList.add(`${CLASS_NAMES.header.socialIcons}__item`);
         socialIconItemLink.appendChild(socIconimg).setAttribute('src', `./assets/img/${socialIconTitle[i]}.svg`)
-    }) 
+    })
 }
 
 //header end
 //intro slider start
-const introSliderArr = [
-    {
+const introSliderArr = [{
         title: "SIMPLE & MODERN",
         subtitle: "WE MAKE THE WORLD BEAUTIFUL EVERYDAY"
     },
@@ -255,8 +255,7 @@ const secProjectsList = document.createElement(CLASS_TAG.div);
 containerProjects.appendChild(secProjectsList).classList.add(CLASS_NAMES.secProjects.secProjectsList);
 
 const projectsCount = 2
-const projects = [
-    {
+const projects = [{
         subtitle: 'ONE WORLD',
         title: "TRADE CENTER",
         text: "Increasing prosperity in our lives can be accomplished by having the right frame of mind. The truth is, our thoughts are very powerful.",
@@ -274,6 +273,7 @@ const projects = [
     }
 ]
 createProjectsList()
+
 function createProjectsList() {
     projects.forEach(el => {
         const itemContent = document.createElement(CLASS_TAG.div);
@@ -339,8 +339,7 @@ const newsSliderWrapper = document.createElement(CLASS_TAG.div);
 secNewsSlider.appendChild(newsSliderWrapper).classList.add('swiper-wrapper', 'news__swiper-wrapper');
 
 
-const newsData = [
-    {
+const newsData = [{
         img: 'news1',
         title: 'SEE THE UNMATCHED BEAUTY OF THE GREAT',
         text: 'Free directories: directories are perfect for customers that are searching for...',
@@ -406,6 +405,7 @@ const newsData = [
     },
 ]
 createNewsSlider()
+
 function createNewsSlider() {
 
     newsData.forEach(el => {
@@ -479,6 +479,7 @@ secGalleryContainer.appendChild(galleryList).classList.add(CLASS_NAMES.secGaller
 
 const galleryImg = ['gallery1', 'gallery2', 'gallery3', 'gallery4', 'gallery5'] // index 0 is big 
 createGallery()
+
 function createGallery() {
     galleryImg.forEach(el => {
 
@@ -495,6 +496,7 @@ function createGallery() {
 }
 
 zoomIn()
+
 function zoomIn() {
     const img = document.querySelectorAll(".gallery__img");
     const zoomIn = document.querySelectorAll(".gallery__item-zoom")
@@ -509,6 +511,7 @@ function zoomIn() {
         })
 
         document.addEventListener('click', resetImg());
+
         function resetImg() {
             img[i].addEventListener('click', (e) => {
                 img[i].classList.remove('--zoom-in')
@@ -527,23 +530,32 @@ const map = document.createElement(CLASS_TAG.div);
 secMap.appendChild(map).setAttribute('id', 'map')
 
 function initMap() {
-	let centerPosition = { lat: 40.6576, lng: -73.8855 }
-	if (document.documentElement.clientWidth < 768) centerPosition = { lat: 40.682119, lng: -73.899277 }
-	const map = new google.maps.Map(document.getElementById("map"), {
-		mapId: '14d9cd3d0e8a65c',
-		zoom: 13,
-		center: centerPosition,
-		disableDefaultUI: true,
-	})
-	let markerImage = {
-		url: './assets/img/marker-map.png',
-		anchor: new google.maps.Point(54, 54),
-	}
-	let marker = new google.maps.Marker({
-		position: { lat: 40.682119, lng: -73.899277 },
-		map: map,
-		icon: markerImage,
-	})
+    let centerPosition = {
+        lat: 40.6576,
+        lng: -73.8855
+    }
+    if (document.documentElement.clientWidth < 768) centerPosition = {
+        lat: 40.682119,
+        lng: -73.899277
+    }
+    const map = new google.maps.Map(document.getElementById("map"), {
+        mapId: '14d9cd3d0e8a65c',
+        zoom: 13,
+        center: centerPosition,
+        disableDefaultUI: true,
+    })
+    let markerImage = {
+        url: './assets/img/marker-map.png',
+        anchor: new google.maps.Point(54, 54),
+    }
+    let marker = new google.maps.Marker({
+        position: {
+            lat: 40.682119,
+            lng: -73.899277
+        },
+        map: map,
+        icon: markerImage,
+    })
 }
 //section map end
 
@@ -620,9 +632,10 @@ const secFooterSocial = document.createElement(CLASS_TAG.div);
 
 secFooterWrapper.appendChild(secFooterSocial).classList.add('footer_social', 'social-icons')
 
-createSocialIconsFooter() 
+createSocialIconsFooter()
+
 function createSocialIconsFooter() {
-    socialIconTitle.forEach((el,i) => {
+    socialIconTitle.forEach((el, i) => {
         const socIconItems = document.createElement(CLASS_TAG.div);
         const socIconimg = document.createElement(CLASS_TAG.img);
         secFooterSocial.appendChild(socIconItems).classList.add(`${CLASS_NAMES.header.socialIcons}__items`);
@@ -631,13 +644,10 @@ function createSocialIconsFooter() {
         socialIconItemLink.classList.add(`${CLASS_NAMES.header.socialIcons}__link`)
         socIconimg.classList.add(`${CLASS_NAMES.header.socialIcons}__item`);
         socialIconItemLink.appendChild(socIconimg).setAttribute('src', `./assets/img/${socialIconTitle[i]}.svg`)
-    }) 
+    })
 }
 
-
-    //section footer end
-
-
+//section footer end
 const menuscroll = document.querySelectorAll('.nav-menu__item');
 
 menuscroll.forEach((el, index) => {
@@ -649,5 +659,3 @@ menuscroll.forEach((el, index) => {
         })
     })
 })
-
-

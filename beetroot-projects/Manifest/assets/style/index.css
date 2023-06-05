@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   width: 100%;
 }
 
@@ -725,6 +726,7 @@ h2 {
   background: none;
   border: none;
   display: none;
+  cursor: pointer;
 }
 @media screen and (max-width: 1440px) {
   .burger-nav {
@@ -746,16 +748,29 @@ h2 {
 .burger-nav__item:last-child {
   top: 100%;
 }
+.burger-nav.is-active {
+  position: absolute;
+  left: 250px;
+  top: 10px;
+  cursor: pointer;
+}
 .burger-nav.is-active .burger-nav__item {
   opacity: 0;
+  z-index: 1000;
 }
 .burger-nav.is-active .burger-nav__item:first-child {
   opacity: 1;
   transform: rotate(35deg) translate(6px, 8px);
+  z-index: 1000;
 }
 .burger-nav.is-active .burger-nav__item:last-child {
+  z-index: 1000;
   opacity: 1;
   transform: rotate(-35deg) translate(6px, -8px);
+}
+
+.is-ul {
+  margin: 30px;
 }
 
 .overlay {

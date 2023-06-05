@@ -1,8 +1,11 @@
-function burgerMenu() {
     const burger = document.getElementById('burger');
-    burger.classList.toggle('is-active');
     const nav = document.getElementById('nav');
-    nav.classList.toggle('is-open');
     const show = document.getElementById('show-overlay');
-    show.classList.toggle('show-overlay');
-}
+    const navUl = document.getElementById('navUl');
+
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('is-active');
+        nav.classList.toggle('is-open');
+        navUl.classList.toggle('is-ul');
+        show.classList.toggle('show-overlay');
+    })

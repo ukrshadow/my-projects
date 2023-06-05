@@ -5,12 +5,14 @@
     width: 23px;
     height: 11px;
     margin-left: 15px;
+
     @include breakpoint('md') {
         margin: 0;
     }
-    &:hover{
+
+    &:hover {
         transition: all 0.4s ease;
         transform: scale(1.1);
-    }   
+    }
 
 }

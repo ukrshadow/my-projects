@@ -1,74 +1,80 @@
 .post-card {
     display: flex;
     flex-direction: column;
-            @include breakpoint() {
-                flex-direction: unset;
-                column-gap: 20px;
-            }
-            @include breakpoint('md') {
-                flex-direction: column;
-            }
 
-        &__item {
-            display: flex;
-            flex-wrap: wrap;
+    @include breakpoint() {
+        flex-direction: unset;
+        column-gap: 20px;
+    }
+
+    @include breakpoint('md') {
+        flex-direction: column;
+    }
+
+    &__item {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__img {
+        margin-bottom: 25px;
+
+        @include breakpoint() {
+            width: 100%;
         }
+    }
 
-        &__img{
-            margin-bottom: 25px;
-            @include breakpoint() {
-                width: 100%;
-            }
+    &__info {
+        @include breakpoint() {
+            width: 100%;
         }
+    }
 
-        &__info {
-            @include breakpoint() {
-                width: 100%;
-            }
-        }
+    &__type-date {
+        @include flex-between;
+        font-family: 'latoregular';
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.1em;
+        color: $c-main-subtitle;
+        margin-bottom: 25px;
 
-        &__type-date{
-            @include flex-between;
-            font-family: 'latoregular';
-            font-size: 12px;
-            line-height: 20px;
-            letter-spacing: 0.1em;
-            color: $c-main-subtitle;
-            margin-bottom: 25px;
-                @include breakpoint('md') {
-                    font-size: 16px;
-                    line-height: 26px;
-                    margin-bottom: 11.5px;
-                }
-        }
-
-        &__title{
-            font-family: 'RedHat-Medium';
-            font-size: 22px;
-            line-height: 36px;
-            letter-spacing: 0.1em;
-            color: $c-main-title;
-            margin-bottom: 15px;
-                @include breakpoint('md') {
-                    margin-bottom: 10px;
-                }
-        }
-
-        &__text{
-            font-family: 'latoregular';
+        @include breakpoint('md') {
             font-size: 16px;
-            line-height: 26.56px;
-            letter-spacing: 0.05em;
-            color: $c-main-text;
+            line-height: 26px;
+            margin-bottom: 11.5px;
         }
+    }
 
-        &__link {
-            color: inherit;
-            display: block;
-                @include breakpoint() {
-                    width: 100%;
-                }
+    &__title {
+        font-family: 'RedHat-Medium';
+        font-size: 22px;
+        line-height: 36px;
+        letter-spacing: 0.1em;
+        color: $c-main-title;
+        margin-bottom: 15px;
+
+        @include breakpoint('md') {
+            margin-bottom: 10px;
         }
+    }
+
+    &__text {
+        font-family: 'latoregular';
+        font-size: 16px;
+        line-height: 26.56px;
+        letter-spacing: 0.05em;
+        color: $c-main-text;
+    }
+
+    &__link {
+        color: inherit;
+        display: block;
+
+        @include breakpoint() {
+            width: 100%;
+        }
+    }
 }
 
 .post-card.--right-side {
@@ -76,7 +82,7 @@
         column-gap: 20px;
         flex-direction: row-reverse;
     }
-    
+
     @include breakpoint('md') {
         flex-direction: column;
     }
@@ -87,12 +93,14 @@
         flex-wrap: wrap;
         width: 50%
     }
+
     @include breakpoint('md') {
         width: 100%;
     }
-        & .post-card__info {
-            @include breakpoint() {
-                width: auto;
-            }
+
+    & .post-card__info {
+        @include breakpoint() {
+            width: auto;
         }
+    }
 }

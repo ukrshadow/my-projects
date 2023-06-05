@@ -10,7 +10,8 @@
     transition: all .4s;
     opacity: 0;
     visibility: hidden;
-    &.show-overlay{
+
+    &.show-overlay {
         opacity: 1;
         visibility: visible;
     }

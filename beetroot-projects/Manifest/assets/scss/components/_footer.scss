@@ -2,10 +2,10 @@
     background: #F4F4F4;
     width: 100%;
 
-    &__wrapper{
+    &__wrapper {
         padding-bottom: 20px;
     }
-    
+
     &__content {
         display: flex;
         align-items: center;
@@ -15,6 +15,7 @@
         @include breakpoint() {
             padding-top: 50px;
         }
+
         @include breakpoint('md') {
             flex-direction: column;
             text-align: center;
@@ -23,48 +24,48 @@
         }
     }
 
-    &__purpose{
+    &__purpose {
         margin-bottom: 20px;
     }
-    
-    &__title{
+
+    &__title {
         font-family: 'RedHat-Regular';
         font-size: 48px;
         line-height: 64px;
         letter-spacing: 0.05em;
         color: $c-main-title;
         margin-bottom: 30px;
-            @include breakpoint('md') {
-                font-size: 32px;
-                line-height: 42px;
-            }
+
+        @include breakpoint('md') {
+            font-size: 32px;
+            line-height: 42px;
+        }
     }
 
-    &__text{
+    &__text {
         font-family: 'latoregular';
         font-size: 16px;
         line-height: 26.56px;
         letter-spacing: 0.1em;
         color: $c-main-title;
-            @include breakpoint('md') {
-                font-size: 18px;
-                line-height: 30px;
-            }
+
+        @include breakpoint('md') {
+            font-size: 18px;
+            line-height: 30px;
+        }
     }
 
     &__tel {
         margin-bottom: 15px;
-        }
-    
-    &__mail {
-        
-        }
+    }
+
+    &__mail {}
 
     &__link {
         color: $c-main-title;
     }
 
-    &__copyright{
+    &__copyright {
         font-family: 'latoregular';
         font-size: 12px;
         line-height: 20px;
@@ -73,12 +74,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-            @include breakpoint('md') {
-                max-width: 300px;
-                text-align: center;
-                font-size: 16px;
-                line-height: 26px;
-                margin: 0 auto;
-            }
+
+        @include breakpoint('md') {
+            max-width: 300px;
+            text-align: center;
+            font-size: 16px;
+            line-height: 26px;
+            margin: 0 auto;
+        }
     }
 }

@@ -1,9 +1,11 @@
-.footer{
+.footer {
     background: $c-black;
-    &__content{
+
+    &__content {
         padding: 80px 0;
     }
-    &__title{
+
+    &__title {
         font-family: 'Josefin Sans';
         font-weight: 700;
         font-size: $fs-24;
@@ -14,7 +16,8 @@
         margin-bottom: 8px;
         text-align: center;
     }
-    &__subtitle{
+
+    &__subtitle {
         font-family: 'Josefin Sans';
         font-weight: 400;
         font-size: $fs-14;

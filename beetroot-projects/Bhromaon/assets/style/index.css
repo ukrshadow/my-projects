@@ -600,21 +600,32 @@ a {
     width: 100%;
   }
 }
-.feedback__item > img {
+@media screen and (max-width: 1140px) {
+  .feedback__item {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+.feedback__img {
   width: 440px;
 }
 @media screen and (max-width: 980px) {
-  .feedback__item > img {
+  .feedback__img {
     width: 720px;
   }
 }
 @media screen and (max-width: 788px) {
-  .feedback__item > img {
+  .feedback__img {
     width: 720px;
   }
 }
 @media screen and (max-width: 720px) {
-  .feedback__item > img {
+  .feedback__img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1140px) {
+  .feedback__img {
     width: 100%;
   }
 }
@@ -633,6 +644,11 @@ a {
 @media screen and (max-width: 720px) {
   .feedback__wrapper {
     padding: 48px 15px;
+  }
+}
+@media screen and (max-width: 1340px) {
+  .feedback__wrapper {
+    padding: 30px 15px;
   }
 }
 .feedback__quote-title {
@@ -719,7 +735,6 @@ a {
   height: 32px;
 }
 
-/* @import './burger-nav'; */
 .section-title {
   font-family: "Aleo";
   font-weight: 400;
