@@ -7,4 +7,4 @@ Live Preview "Monticelo" - [Click Here](https://ukrshadow.github.io/my-projects/
 <br />
 Live Preview "Productly" - [Click Here](https://ukrshadow.github.io/my-projects/beetroot-projects/Productly)  (HTML5, CSS) / [Code] (https://github.com/ukrshadow/my-projects/tree/main/beetroot-projects/Productly)
 <br /> 
-Live Preview "KinoTema" - [Click Here](https://ukrshadow.github.io/my-projects/beetroot-projects/KinoTema)  (React, RTK Query, Tailwind) / [Code] (https://github.com/ukrshadow/my-projects/tree/main/beetroot-projects/KinoTema)
+"KinoTema" - (React, RTK Query, Tailwind) / [Code] (https://github.com/ukrshadow/my-projects/tree/main/beetroot-projects/KinoTema)
