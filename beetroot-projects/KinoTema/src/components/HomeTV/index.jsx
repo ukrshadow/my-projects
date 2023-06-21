@@ -19,14 +19,14 @@ function HomeTV() {
             <ul className='flex flex-col '>
                 {data?.map(el => (
                     <li key={Math.random()} className='flex flex-col border-b border-[#cdc7c7] dark:text-[#ededed] cursor-pointer hover:text-[#d092b2] dark:hover:text-[#d092b2]' >
-                        <Link to={`${routes.serials}/${el.data.id}`}>
+                        <Link to={`${routes.serials}/${el.data?.id}`}>
                             <div className='flex justify-between'>
                                 <div className='flex'>
-                                    <p className='font-semibold'>Title:</p> {el.data.original_name},
-                                    <p className='font-semibold'>Season:</p> {el.data.last_episode_to_air.season_number}
+                                    <p className='font-semibold'>Title:</p> {el.data?.original_name},
+                                    <p className='font-semibold'>Season:</p> {el.data.last_episode_to_air?.season_number}
                                 </div>
                                 <div className='flex'>
-                                    <p className='font-semibold'>Episode:</p> {el.data.last_episode_to_air.episode_number}
+                                    <p className='font-semibold'>Episode:</p> {el.data.last_episode_to_air?.episode_number}
                                 </div>
                             </div>
                         </Link>
