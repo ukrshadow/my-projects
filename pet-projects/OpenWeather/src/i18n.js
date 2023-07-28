@@ -19,7 +19,7 @@ i18n
       },
     /* directory:('./locales'),  */
     backend: {
-        loadPath: '/locales/{{lng}}/{{ns}}.json'
+        loadPath: './locales/{{lng}}/{{ns}}.json'
     },
 });
 
