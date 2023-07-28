@@ -23,8 +23,8 @@ i18n
     interpolation : {
         escapeValue: false
     },
-    directory:'./assets/public/locales', 
-    loadPath: "./assets/locales/{{lng}}/{{ns}}.json",
+    directory:'./locales', 
+    loadPath: `./locales/{{lng}}/{{ns}}.json`,
     
 });
 
