@@ -20,8 +20,11 @@ i18n
     defaultLocale: 'en',
     autoReload: true,
     extension: '.json',
-    /* directory:'./assets/public/locales', 
-    loadPath: "./assets/locales/{{lng}}/{{ns}}.json", */
+    interpolation : {
+        escapeValue: false
+    },
+    directory:'./assets/public/locales', 
+    loadPath: "./assets/locales/{{lng}}/{{ns}}.json",
     
 });
 
