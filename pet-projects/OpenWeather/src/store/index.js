@@ -9,8 +9,8 @@ export const useSelectedCity = create(persist(
         tempUnit: [],
         defaultCelsium: true,
         isActiveC: true,
-        isActiveF:false,
-        currentLanguage:'en',
+        isActiveF: false,
+        currentLanguage: 'en',
 
         //get Current coords and send to AddCity fn
         getCurrentGeo: async (coords) => {
@@ -25,7 +25,7 @@ export const useSelectedCity = create(persist(
         },
         //delete weatherCard
         deleteWeatherCard: (cardIndex) => {
-           set(get().cityWeather.splice(cardIndex,1)) 
+            set(get().cityWeather.splice(cardIndex, 1))
         },
 
         //get current degrees
@@ -34,7 +34,7 @@ export const useSelectedCity = create(persist(
                 get().defaultCelsium = true
                 get().cityWeather[index].convertedTemp = get().cityWeather[index].currentTemp
                 get().cityWeather[index].convertedAllTemp = get().cityWeather[index].allTemp.map(el => (
-                    {temperature: Math.abs(Math.round(el.main.temp)), date: el.dt_txt}
+                    { temperature: Math.abs(Math.round(el.main.temp)), date: el.dt_txt }
                 ))
                 get().cityWeather[index].isActiveC = true
                 get().cityWeather[index].isActiveF = false
@@ -43,8 +43,8 @@ export const useSelectedCity = create(persist(
             if (TempName === "°F") {
                 get().defaultCelsium = false;
                 get().cityWeather[index].convertedTemp = get().cityWeather[index].currentTemp * 1.8 + 32;
-                get().cityWeather[index].convertedAllTemp = get().cityWeather[index].allTemp.map(el =>(
-                    {temperature: Math.abs(Math.round(el.main.temp*1.8 + 32)), date: el.dt_txt}
+                get().cityWeather[index].convertedAllTemp = get().cityWeather[index].allTemp.map(el => (
+                    { temperature: Math.abs(Math.round(el.main.temp * 1.8 + 32)), date: el.dt_txt }
                 ));
                 get().cityWeather[index].isActiveC = false
                 get().cityWeather[index].isActiveF = true
@@ -74,15 +74,13 @@ export const useSelectedCity = create(persist(
                         humidity: res.list[0].main.humidity,
                         pressure: res.list[0].main.pressure,
                         convertedTemp: get().defaultCelsium === true ? res.list[0].main.temp : res.list[0].main.temp,
-                        convertedAllTemp: get().defaultCelsium === true 
-                        ?
-                        res.list.map(el => (
-                            {temperature: Math.abs(Math.round(el.main.temp)), date: el.dt_txt}
-                        )) 
-                        : 
-                        res.list.map(el => (
-                            {temperature: Math.abs(Math.round(el.main.temp)), date: el.dt_txt}
-                        )),
+                        convertedAllTemp: get().defaultCelsium === true
+                            ? res.list.map(el => (
+                                { temperature: Math.abs(Math.round(el.main.temp)), date: el.dt_txt }
+                            ))
+                            : res.list.map(el => (
+                                { temperature: Math.abs(Math.round(el.main.temp)), date: el.dt_txt }
+                            )),
                     }, ...prevstate.cityWeather]
                 }))
             }
@@ -90,21 +88,21 @@ export const useSelectedCity = create(persist(
 
         //resend city names to addCity with select language
         selectLanguage: (language) => {
-            set({currentLanguage:language}, )
+            set({ currentLanguage: language },)
 
             const newCityNameArray = []
-                get().cityWeather.forEach((el) => {
-                    newCityNameArray.push(el.cityName)
-                })
-                get().cityWeather.length = 0
-                newCityNameArray.forEach(el => {
-                    get().addCity(el, language)
-                } )
+            get().cityWeather.forEach((el) => {
+                newCityNameArray.push(el.cityName)
+            })
+            get().cityWeather.length = 0
+            newCityNameArray.forEach(el => {
+                get().addCity(el, language)
+            })
         },
     })
     ,
     {
-        name: 'weather', 
+        name: 'weather',
 
     },
 )

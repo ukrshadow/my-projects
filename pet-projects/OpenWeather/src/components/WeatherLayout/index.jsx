@@ -8,7 +8,7 @@ import Graph from "../Graph";
 import { useGeolocated } from "react-geolocated";
 import { useTranslation } from "react-i18next";
 import './../../index.css'
-import styles from './styles.module.scss'
+import styles from './styles.module.scss' 
 
 export function WeatherLayout() {
     const dataFromAPI = useSelectedCity(state => state.cityWeather)
