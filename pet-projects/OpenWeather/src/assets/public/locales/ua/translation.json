@@ -1,0 +1,11 @@
+{
+    "search": {
+        "btnAdd": "Додати місто",
+        "searchPlaceHolder": "Назва міста"
+    },
+    "wetherCard": {
+        "wind": "Вітер",
+        "humidity": "Вологість",
+        "pressure": "Тиск"
+    }
+}
