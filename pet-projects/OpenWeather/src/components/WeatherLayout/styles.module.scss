@@ -1,0 +1,152 @@
+@import './../../assets/styles/consts';
+@import './../../assets/styles/mixin';
+
+.weatherCard {
+    &__item {
+        width: 20%;
+        text-align: center,
+    }
+
+    &__card {
+        width: 350px;
+        height: 257px;
+        border-radius: 5px;
+    }
+
+    &__cardBGPlus {
+        background: $c-light-orange
+    }
+
+    &__cardBGMinus {
+        background: $c-light-blue
+    }
+}
+
+.card {
+    &__wrapper {
+        padding-left: 15px;
+        padding-right: 20px;
+    }
+
+    &__header {
+        @include flex-center;
+        justify-content: space-between;
+
+    }
+
+    &__city {
+        font: $fontJost-16;
+    }
+
+    &__weather {
+        @include flex-center;
+    }
+
+    &__close {
+        position: absolute;
+        background: url(./../../assets/img/close.svg) no-repeat center center;
+        top: 5px;
+        right: 30px;
+        width: 11px;
+        height: 11px;
+        cursor: pointer;
+    }
+
+    &__weather-name {
+        color: $c-darklight-red
+    }
+
+    &__timeNow {
+        text-align: left;
+        margin-bottom: 16px;
+        font: $fontJost-18;
+    }
+
+    &__graph {
+        margin-bottom: 17px;
+    }
+
+    &__info {
+        @include flex-center;
+        justify-content: space-between;
+        color: $c-black;
+        letter-spacing: 0px;
+    }
+
+    &__temperature {
+        font: $fontJost-44;
+        position: relative;
+    }
+
+    &__tempValue {
+        display: inline-block
+    }
+
+    &__tempName {
+        font: $fontJost-22;
+        position: absolute;
+        top: 0;
+        display: inline-block;
+        width: 58px;
+        cursor: pointer;
+    }
+
+    &__whp {
+        font: $fontJost-12;
+    }
+
+    &__whp>p {
+        margin: 0 0 5px 0;
+
+    }
+
+    &__whp>p:last-child {
+        margin: 0;
+    }
+
+    &__whpDataPlus {
+        color: $c-orange;
+        font: $fontJost-12fw600;
+    }
+
+    &__whpDataMinus {
+        color: $c-blue;
+        font: $fontJost-12fw600;
+    }
+
+
+    &__whpRTL>p {
+        margin: 0 0 5px 0;
+        /* direction: rtl; */
+        text-align: right;
+    }
+
+    &__whpRTL>p:last-child {
+        margin: 0;
+    }
+}
+
+@include rtlLayout() {
+
+    .card {
+        &__tempName {
+            direction: ltr;
+        }
+
+        &__tempValue {
+            direction: ltr;
+        }
+
+        &__close {
+            left: 30px;
+            right: unset;
+        }
+    }
+}
+
+.isDefault{
+    color: #8D8D8D;
+}
+.isActive{
+    color: black;
+}

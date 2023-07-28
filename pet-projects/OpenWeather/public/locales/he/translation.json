@@ -1,0 +1,11 @@
+{
+    "search": {
+        "btnAdd": "הוסף עיר",
+        "searchPlaceHolder": "שם העיר"
+    },
+    "wetherCard": {
+        "wind": "רוּחַ",
+        "humidity": "לחות",
+        "pressure": "לַחַץ"
+    }
+}

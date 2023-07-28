@@ -1,0 +1,11 @@
+{
+    "search": {
+        "btnAdd": "Add",
+        "searchPlaceHolder": "City name"
+    },
+    "wetherCard": {
+        "wind": "Wind",
+        "humidity": "Humidity",
+        "pressure": "Pressure"
+    }
+}

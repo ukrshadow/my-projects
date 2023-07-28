@@ -1,0 +1,10 @@
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+}
+
+@mixin rtlLayout() {
+    html[dir=rtl] {
+      @content;
+    }
+}

@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'Jost';
+  src: url('./assets/fonts/Jost-Bold.woff2') format('woff2'),
+      url('./assets/fonts/Jost-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Jost';
+  src: url('./assets/fonts/Jost-Regular.woff2') format('woff2'),
+      url('./assets/fonts/Jost-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Jost';
+  src: url('./assets/fonts/Jost-Light.woff2') format('woff2'),
+      url('./assets/fonts/Jost-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0 auto;
+  font-family: 'Jost';
+  font-size: 14px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
