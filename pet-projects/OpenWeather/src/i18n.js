@@ -19,7 +19,7 @@ i18n
       },
     /* directory:('./locales'),  */
     backend: {
-        loadPath: './locales/{{lng}}/{{ns}}.json'
+        loadPath: 'https://ukrshadow.github.io/my-projects/pet-projects/OpenWeather/dist/locales/{{lng}}/{{ns}}.json'
     },
 });
 
