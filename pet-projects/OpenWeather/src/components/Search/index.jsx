@@ -13,19 +13,23 @@ export const Search = () => {
     const { t, i18n } = useTranslation();
 
     //get city names in Autocomplete
-    useEffect(() => {
+    useEffect( () => {
+        if(MathingCities.length !== 0 ) {
         const options = []
-        fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${MathingCities}&key=AIzaSyCy5koJSf53RQJBLb86E2_qxV2BjL1grPs&type=(regions)`)
-            .then(res => res.json())
+         fetch(`https://api.api-ninjas.com/v1/city?name=${MathingCities}&limit=5`, {
+            headers: { 'X-Api-Key': '2VT8To6kGq7Fu6oGiHBMgg==HwsoWTq8iqAnFEAT'},
+            contentType: 'application/json',
+        })
+            .then(res =>  res.json())
             .then(data => {
-                data?.predictions?.forEach(element => {
-                    options.push({ value: element.description })
+                data?.forEach(element => {
+                    options.push({ value:`${element.name}, ${element.country}` })
                 })
                 setMatchingList(options)
             });
+        }
     }, [MathingCities]);
 
-    
     const activatePlacesSearch = (mathingCities) => {
         setMathingCities(mathingCities)
         setValue(mathingCities)
