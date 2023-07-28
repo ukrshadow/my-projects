@@ -1,8 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { OPTIONS } from '../../pages/fetchOptions'
 
-
-
 export const api = createApi({
 
     reducerPath: 'api',
@@ -17,10 +15,10 @@ export const api = createApi({
     endpoints: (build) => ({
         getTopRatedFilms: build.query({
             query: () => ({
-                url: `movie/top_rated?language=en-US`,       /* `top_rated?language=en-US` */
+                url: `movie/top_rated?language=en-US`,       
                 method: 'GET',
                 headers: OPTIONS.headers
-                /* body:{} */
+          
             })
         }),
         getTopRatedSerials: build.query({
@@ -40,12 +38,12 @@ export const api = createApi({
         getNewSeries: build.query({
             queryFn: async (data, _, extraOptions, fetch) => {
                 if (data) {
-                    const promises = await data.map((id) => {
-                        return fetch(`/tv/${id}?language=en-US`);
-                    });
-                    return Promise.all(promises).then((results) => {
-                        return { data: results };
-                    });
+                        const promises = await data.map((id) => {
+                            return fetch(`/tv/${id}?language=en-US`);
+                        });
+                        return Promise.all(promises).then((results) => {
+                            return { data: results };
+                        });
                 } else {
                     return { error: 'No match TV series' }
                 }
