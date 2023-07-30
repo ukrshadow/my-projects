@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 export const Search = () => {
     const [MathingCities, setMathingCities] = useState([])
     const [value, setValue] = useState([])
-    const [selectedCityName, setSelectedCitiesName] = useState({})
+    const [selectedCityName, setSelectedCitiesName] = useState([])
     const [MatchingList, setMatchingList] = useState([{}])
     const addCity = useSelectedCity((state) => state.addCity);
     const { t, i18n } = useTranslation();
@@ -38,10 +38,10 @@ export const Search = () => {
 
     //send result city name to store
     const sendCity = () => {
+        if(selectedCityName.length !== 0 ){
         addCity(selectedCityName?.split(',').slice(0, 1).join(''), i18n.language)
         setValue('')
-        setSelectedCitiesName('')
-    
+        setSelectedCitiesName('')}
     }
 
     return (
