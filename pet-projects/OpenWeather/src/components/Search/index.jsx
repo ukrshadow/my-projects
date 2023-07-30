@@ -13,7 +13,7 @@ export const Search = () => {
     const { t, i18n } = useTranslation();
 
     //get city names in Autocomplete
-    useEffect( () => {
+    useEffect(() => {
         if(MathingCities.length !== 0 ) {
         const options = []
          fetch(`https://api.api-ninjas.com/v1/city?name=${MathingCities}&limit=5`, {
@@ -30,6 +30,7 @@ export const Search = () => {
         }
     }, [MathingCities]);
 
+
     const activatePlacesSearch = (mathingCities) => {
         setMathingCities(mathingCities)
         setValue(mathingCities)
@@ -39,6 +40,8 @@ export const Search = () => {
     const sendCity = () => {
         addCity(selectedCityName?.split(',').slice(0, 1).join(''), i18n.language)
         setValue('')
+        setSelectedCitiesName('')
+    
     }
 
     return (
