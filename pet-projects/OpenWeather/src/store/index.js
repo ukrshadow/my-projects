@@ -2,10 +2,6 @@ import dayjs from 'dayjs'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-
-const apiKey = import.meta.env.VITE_APP_ACCESS_KEY
-const apiUrl = import.meta.env.VITE_APP_API_BASE_URL
-
 export const useStore = create(
   persist(
     (set, get) => {
@@ -19,7 +15,7 @@ export const useStore = create(
         getCurrentGeo: async coords => {
           try {
             const response = await fetch(
-              `${apiUrl}weather?lat=${coords?.lat}&lon=${coords?.lon}&appid=${apiKey}`
+              `${import.meta.env.VITE_APP_API_BASE_URL}weather?lat=${coords?.lat}&lon=${coords?.lon}&appid=${import.meta.env.VITE_APP_ACCESS_KEY}`
             )
             const res = await response.json()
             if (res) {
@@ -76,7 +72,7 @@ export const useStore = create(
           if (city.length !== 0 && findedCities === undefined) {
             try {
               const response = await fetch(
-                `${apiUrl}forecast?q=${city}&appid=${apiKey}&units=metric&lang=${language}`
+                `${import.meta.env.VITE_APP_API_BASE_URL}forecast?q=${city}&appid=${import.meta.env.VITE_APP_ACCESS_KEY}&units=metric&lang=${language}`
               )
               const res = await response.json()
               set(prevstate => ({
@@ -115,7 +111,7 @@ export const useStore = create(
           })
           try {
             const response = await fetch(
-              `${apiUrl}group?id=${citiesId.join(',')}&lang=${language}&units=metric&cnt=40&appid=${apiKey}`
+              `${import.meta.env.VITE_APP_API_BASE_URL}group?id=${citiesId.join(',')}&lang=${language}&units=metric&cnt=40&appid=${import.meta.env.VITE_APP_ACCESS_KEY}`
             )
             const res = await response.json()
             res?.list.map(el => {

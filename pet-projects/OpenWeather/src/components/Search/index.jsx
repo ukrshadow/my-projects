@@ -1,12 +1,9 @@
-import { AutoComplete, Button, Space } from 'antd'
+import { AutoComplete, Button } from 'antd'
 import { useEffect, useState } from 'react'
 import { useStore } from '../../store'
 import styles from './styles.module.scss'
 import { useTranslation } from 'react-i18next'
 import { useDebounce } from '../../utility/useDebounce'
-
-const apiUrl = import.meta.env.VITE_APP_API_SEARCH_CITY_URL
-const apiKey = import.meta.env.VITE_APP_SEARCH_CITY_KEY
 
 export const Search = () => {
   const [matchingCities, setMatchingCities] = useState([])
@@ -19,8 +16,8 @@ export const Search = () => {
   const findCities = value => {
     const options = []
     try {
-      fetch(`${apiUrl}city?name=${value}&limit=5`, {
-        headers: { 'X-Api-Key': apiKey },
+      fetch(`${import.meta.env.VITE_APP_API_SEARCH_CITY_URL}city?name=${value}&limit=5`, {
+        headers: { 'X-Api-Key': import.meta.env.VITE_APP_SEARCH_CITY_KEY },
         contentType: 'application/json',
       })
         .then(res => res.json())
