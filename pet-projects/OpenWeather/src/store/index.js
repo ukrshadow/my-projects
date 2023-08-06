@@ -68,7 +68,7 @@ export const useStore = create(
 
         //add weatherCard
         addCity: async (city, language) => {
-          const findedCities = get().cityWeather.find(el => el.cityName === city)
+          const findedCities = get().cityWeather.find(el => el.cityName === city.split(',').splice(0, 1).join(''))
           if (city.length !== 0 && findedCities === undefined) {
             try {
               const response = await fetch(
