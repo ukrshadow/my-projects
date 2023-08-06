@@ -16,6 +16,10 @@ export const WeatherCard = ({ dataCard }) => {
   const getCurrencyTempName = useStore(state => state.getCurrencyTempName)
   const deleteWeatherCard = useStore(state => state.deleteWeatherCard)
 
+  const handleSelectedUnit = (unit, cityId) => {
+    getCurrencyTempName(unit, cityId)
+  }
+
   return (
     <Col className={styles.weatherCard__item}>
       <div
@@ -29,12 +33,10 @@ export const WeatherCard = ({ dataCard }) => {
               {data?.cityName}, {data?.cityCountry}
             </div>
             <div className={styles.card__weather}>
-              {
-                <img
-                  src={`https://openweathermap.org/img/wn/${data?.currentWeatherIcon}.png`}
-                  alt="weather-ico"
-                />
-              }
+              <img
+                src={`https://openweathermap.org/img/wn/${data?.currentWeatherIcon}.png`}
+                alt="weather-ico"
+              />
               <span className={styles.card__weatherName}>{data?.currentWeatherMain}</span>
             </div>
             <div
@@ -57,14 +59,12 @@ export const WeatherCard = ({ dataCard }) => {
                   ? `+${Math.round(data.convertedTemp)}`
                   : Math.round(data.convertedTemp)}
               </div>
-              <div
-                className={styles.card__tempName}
-                onClick={e => getCurrencyTempName(e.target.outerText, data.cityId)}
-              >
+              <div className={styles.card__tempName}>
                 <span
                   className={classnames(styles.isDefault, {
                     [styles.isActive]: data.isActiveUnit,
                   })}
+                  onClick={e => handleSelectedUnit(e.target.outerText, data.cityId)}
                 >
                   °C
                 </span>
@@ -73,6 +73,7 @@ export const WeatherCard = ({ dataCard }) => {
                   className={classnames(styles.isDefault, {
                     [styles.isActive]: !data.isActiveUnit,
                   })}
+                  onClick={e => handleSelectedUnit(e.target.outerText, data.cityId)}
                 >
                   °F
                 </span>

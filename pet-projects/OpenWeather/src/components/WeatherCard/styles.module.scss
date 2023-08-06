@@ -90,7 +90,7 @@
         top: 0;
         display: inline-block;
         width: 58px;
-        cursor: pointer;
+
     }
 
     &__whp {
@@ -147,8 +147,10 @@
 
 .isDefault {
     color: $c-light-gray;
+    cursor: pointer;
 }
 
 .isActive {
     color: $c-black;
+    cursor: pointer;
 }

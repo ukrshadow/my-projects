@@ -10,24 +10,20 @@ const Graph = ({ currentTemp, allTemps }) => {
   if (document.documentElement.dir === 'rtl') {
     data = [...data].reverse()
   }
-
+  const areaColor = () => {
+    if (currentTemp > 0) {
+      return {
+        fill: 'l(270) 1:#FFA25B   0:#FFF4F4',
+      }
+    } else {
+      return {
+        fill: 'l(270) 1:#5B8CFF   0:#FFF4F4',
+      }
+    }
+  }
   return (
     <div className={styles.graph}>
-      <Area
-        {...CONFIG}
-        data={data}
-        areaStyle={() => {
-          if (currentTemp > 0) {
-            return {
-              fill: 'l(270) 1:#FFA25B   0:#FFF4F4',
-            }
-          } else {
-            return {
-              fill: 'l(270) 1:#5B8CFF   0:#FFF4F4',
-            }
-          }
-        }}
-      />
+      <Area {...CONFIG} data={data} areaStyle={areaColor} />
     </div>
   )
 }

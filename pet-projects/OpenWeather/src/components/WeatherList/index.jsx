@@ -19,8 +19,7 @@ export function WeatherList() {
   })
   const getFutureTime = localStorage.getItem('futureTimeData')
   const futureTime = JSON.stringify(dataFromAPI[0]?.futureTime * 1000)
-  const currentTime = new Date()
-  const currentTimeData = currentTime.getTime()
+  const currentTimeData = new Date().getTime()
 
   // Sending Current User Coords to Store
   useEffect(() => {
@@ -38,7 +37,6 @@ export function WeatherList() {
       dataFromAPI.forEach(el => {
         newCityNameArray.push(el.cityName)
       })
-      dataFromAPI.length = 0
       newCityNameArray.forEach(el => {
         addCity(el, i18n.language)
       })
@@ -49,7 +47,7 @@ export function WeatherList() {
   return (
     <>
       <Row gutter={[30, 32]} className="weatherCard__list">
-        {dataFromAPI ? dataFromAPI?.map(el => <WeatherCard key={el.cityId} dataCard={el} />) : null}
+        {dataFromAPI.length && dataFromAPI.map(el => <WeatherCard key={el.cityId} dataCard={el} />)}
       </Row>
     </>
   )
