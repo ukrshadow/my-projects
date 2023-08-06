@@ -1,111 +1,163 @@
-import { create } from "zustand";
+import dayjs from 'dayjs'
+import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
 
-export const useSelectedCity = create(persist(
-    (set, get) => ({
+const apiKey = import.meta.env.VITE_APP_ACCESS_KEY
+const apiUrl = import.meta.env.VITE_APP_API_BASE_URL
+
+export const useStore = create(
+  persist(
+    (set, get) => {
+      return {
         cityWeather: [],
-        testCity: [],
         tempUnit: [],
-        defaultCelsium: true,
-        isActiveC: true,
-        isActiveF: false,
+        isActiveUnit: true,
         currentLanguage: 'en',
 
         //get Current coords and send to AddCity fn
-        getCurrentGeo: async (coords) => {
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${coords?.lat}&lon=${coords?.lon}&appid=50b13f4d4632c3d79f872a013142961d`)
+        getCurrentGeo: async coords => {
+          try {
+            const response = await fetch(
+              `${apiUrl}weather?lat=${coords?.lat}&lon=${coords?.lon}&appid=${apiKey}`
+            )
             const res = await response.json()
-            const getWeather = localStorage.getItem('weather');
-            const getCityNameFromStore = JSON.parse(getWeather).state?.cityWeather.find(cities => cities.cityName === res.name)
-
-            if (getCityNameFromStore?.cityName !== res.name) {
-                get().addCity(res.name);
+            if (res) {
+              const getCityNameFromStore = get().cityWeather.find(
+                cities => cities.cityName === res.name
+              )
+              if (getCityNameFromStore?.cityName !== res.name) {
+                get().addCity(res.name)
+              }
             }
+          } catch {
+            console.error('error')
+          }
         },
+
         //delete weatherCard
-        deleteWeatherCard: (cardIndex) => {
-            set(get().cityWeather.splice(cardIndex, 1))
+        deleteWeatherCard: cityId => {
+          set({ cityWeather: get().cityWeather.filter(el => el.cityId !== cityId) })
         },
 
         //get current degrees
-        getCurencyTempName: (TempName, index) => {
-            if (TempName === "°C") {
-                get().defaultCelsium = true
-                get().cityWeather[index].convertedTemp = get().cityWeather[index].currentTemp
-                get().cityWeather[index].convertedAllTemp = get().cityWeather[index].allTemp.map(el => (
-                    { temperature: Math.abs(Math.round(el.main.temp)), date: el.dt_txt }
-                ))
-                get().cityWeather[index].isActiveC = true
-                get().cityWeather[index].isActiveF = false
-                set({ currentTemp: get().cityWeather[index].currentTemp })
-            }
-            if (TempName === "°F") {
-                get().defaultCelsium = false;
-                get().cityWeather[index].convertedTemp = get().cityWeather[index].currentTemp * 1.8 + 32;
-                get().cityWeather[index].convertedAllTemp = get().cityWeather[index].allTemp.map(el => (
-                    { temperature: Math.abs(Math.round(el.main.temp * 1.8 + 32)), date: el.dt_txt }
-                ));
-                get().cityWeather[index].isActiveC = false
-                get().cityWeather[index].isActiveF = true
-                set({ currentTemp: get().cityWeather[index].currentTemp * 1.8 + 32 })
-            }
+        getCurrencyTempName: (TempName, cityId) => {
+          const newCard = [...get().cityWeather]
+          get().cityWeather.find(el => {
+            if (el.cityId === cityId) {
+              const cardIndex = newCard.indexOf(newCard.find(el => el.cityId === cityId))
 
+              if (TempName === '°C' && newCard[cardIndex].isActiveUnit === false) {
+                newCard[cardIndex].convertedTemp = el.currentTemp
+                newCard[cardIndex].convertedAllTemp = el.convertedAllTemp.map(el => ({
+                  temperature: Math.abs(Math.round((el.temperature - 32) / 1.8)),
+                  date: el.date,
+                }))
+                newCard[cardIndex].isActiveUnit = true
+                set({ cityWeather: newCard })
+              }
+
+              if (TempName === '°F') {
+                newCard[cardIndex].convertedTemp = el.currentTemp * 1.8 + 32
+                newCard[cardIndex].convertedAllTemp = el.convertedAllTemp.map(el => ({
+                  temperature: Math.abs(Math.round(el.temperature * 1.8 + 32)),
+                  date: el.date,
+                }))
+                newCard[cardIndex].isActiveUnit = false
+                set({ cityWeather: newCard })
+              }
+            }
+          })
         },
 
         //add weatherCard
         addCity: async (city, language) => {
-            if (city.length !== 0) {
-                const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=50b13f4d4632c3d79f872a013142961d&units=metric&lang=${language}`)   //  0711267016eb451e43c2a98b4543b811
-                const res = await response.json()
-                set(prevstate => ({
-                    cityWeather: [{
-                        isActiveC: get().isActiveC,
-                        isActiveF: get().isActiveF,
-                        cityId: res.city.id,
-                        cityName: res.city.name,
-                        cityCountry: res.city.country,
-                        currentWeatherIcon: res.list[0].weather[0].icon,
-                        currentWeatherMain: res.list[0].weather[0].description,
-                        currentTemp: res.list[0].main.temp,
-                        futureTime: res.list[0].dt,
-                        allTemp: res.list,
-                        wind: res.list[0].wind.speed,
-                        humidity: res.list[0].main.humidity,
-                        pressure: res.list[0].main.pressure,
-                        convertedTemp: get().defaultCelsium === true ? res.list[0].main.temp : res.list[0].main.temp,
-                        convertedAllTemp: get().defaultCelsium === true
-                            ? res.list.map(el => (
-                                { temperature: Math.abs(Math.round(el.main.temp)), date: el.dt_txt }
-                            ))
-                            : res.list.map(el => (
-                                { temperature: Math.abs(Math.round(el.main.temp)), date: el.dt_txt }
-                            )),
-                    }, ...prevstate.cityWeather]
-                }))
+          const findedCities = get().cityWeather.find(el => el.cityName === city)
+          if (city.length !== 0 && findedCities === undefined) {
+            try {
+              const response = await fetch(
+                `${apiUrl}forecast?q=${city}&appid=${apiKey}&units=metric&lang=${language}`
+              )
+              const res = await response.json()
+              set(prevstate => ({
+                cityWeather: [
+                  {
+                    isActiveUnit: get().isActiveUnit,
+                    cityId: res.city.id,
+                    cityName: res.city.name,
+                    cityCountry: res.city.country,
+                    currentWeatherIcon: res.list[0].weather[0].icon,
+                    currentWeatherMain: res.list[0].weather[0].description,
+                    currentTemp: res.list[0].main.temp,
+                    futureTime: res.list[0].dt,
+                    allTemp: res.list,
+                    wind: res.list[0].wind.speed,
+                    humidity: res.list[0].main.humidity,
+                    pressure: res.list[0].main.pressure,
+                    convertedTemp: res.list[0].main.temp,
+                    convertedAllTemp: get().getAverageTemps(res.list),
+                  },
+                  ...prevstate.cityWeather,
+                ],
+              }))
+            } catch {
+              console.error('error')
             }
+          }
         },
 
         //resend city names to addCity with select language
-        selectLanguage: (language) => {
-            set({ currentLanguage: language },)
-
-            const newCityNameArray = []
-            get().cityWeather.forEach((el) => {
-                newCityNameArray.push(el.cityName)
+        selectLanguage: async (language) => {
+          const copyCityWeather = [...get().cityWeather]
+          const citiesId = []
+          copyCityWeather.forEach(el => {
+            citiesId.push(el.cityId)
+          })
+          try {
+            const response = await fetch(
+              `${apiUrl}group?id=${citiesId.join(',')}&lang=${language}&units=metric&cnt=40&appid=${apiKey}`
+            )
+            const res = await response.json()
+            res?.list.map(el => {
+              copyCityWeather.filter(data => {
+                if (data.cityId === el.id)
+                  data.currentWeatherMain = el.weather[0].description,
+                    data.currentWeatherIcon = el.weather[0].icon
+              })
             })
-            get().cityWeather.length = 0
-            newCityNameArray.forEach(el => {
-                get().addCity(el, language)
-            })
+            set({ cityWeather: copyCityWeather, currentLanguage: language })
+          } catch {
+            console.error('Not found city IDs')
+          }
         },
-    })
-    ,
-    {
-        name: 'weather',
 
+        getAverageTemps: (array) => {
+          const uniqDateNewArr = []
+          const result = []
+          const data = []
+
+          array?.forEach(el => uniqDateNewArr.push(dayjs(el.dt_txt).format('DD.MM')))
+
+          for (const currentDate of uniqDateNewArr) {
+            const allTemperatures = array?.filter(item => dayjs(item.dt_txt).format('DD.MM') === currentDate)
+              .map(item => item.main.temp)
+            const averageTemp =
+              allTemperatures.reduce((prev, curr) => prev + curr, 0) / allTemperatures.length
+            result.push({ date: currentDate, temperature: Math.round(averageTemp) })
+          }
+
+          for (let i = 0; i < result.length; i++) {
+            if (uniqDateNewArr[i] !== uniqDateNewArr[i - 1]) {
+              data.push(result[i])
+            }
+          }
+
+          return data
+        }
+      }
     },
+    {
+      name: 'weather',
+    }
+  )
 )
-)
-
-

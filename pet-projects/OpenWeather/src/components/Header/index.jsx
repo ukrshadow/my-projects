@@ -1,15 +1,15 @@
-import { Select } from 'antd';
+import { Select } from 'antd'
 import styles from './styles.module.scss'
-import { useSelectedCity } from '../../store';
-import { useTranslation } from 'react-i18next';
+import { useStore } from '../../store'
+import { useTranslation } from 'react-i18next'
+import { OPTIONS } from '../../utility/headerSelectOptions'
 
 export const Header = () => {
-  const { selectLanguage } = useSelectedCity();
-  const { t, i18n } = useTranslation();
+  const selectLanguage = useStore(state => state.selectLanguage)
+  const { i18n } = useTranslation()
   const getCityNameFromStore = JSON.parse(localStorage.getItem('weather')).state.currentLanguage
 
-  
-  const handleChange = (value) => {
+  const handleChange = value => {
     selectLanguage(value)
     i18n.changeLanguage(value)
     document.documentElement.lang = value
@@ -18,32 +18,21 @@ export const Header = () => {
     } else {
       document.documentElement.dir = 'ltr'
     }
-  };
+  }
 
   return (
-    <div className={styles.header__language}>
-
-      <Select
-        defaultValue={getCityNameFromStore}
-        className={styles.header__selectLanguage}
-        bordered={false}
-        onSelect={handleChange}
-        options={[
-          {
-            value: 'en',
-            label: 'EN',
-          },
-          {
-            value: 'ua',
-            label: 'UA',
-          },
-          {
-            value: 'he',
-            label: 'HE',
-          },
-
-        ]}
-      />
-    </div>
+    <header>
+      <div className={styles.container}>
+        <div className={styles.header__language}>
+          <Select
+            defaultValue={getCityNameFromStore}
+            className={styles.header__selectLanguage}
+            bordered={false}
+            onSelect={handleChange}
+            options={OPTIONS}
+          />
+        </div>
+      </div>
+    </header>
   )
 }

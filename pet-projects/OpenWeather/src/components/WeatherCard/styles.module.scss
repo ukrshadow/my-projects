@@ -26,6 +26,7 @@
     &__wrapper {
         padding-left: 15px;
         padding-right: 20px;
+        position: relative;
     }
 
     &__header {
@@ -46,13 +47,14 @@
         position: absolute;
         background: url(./../../assets/img/close.svg) no-repeat center center;
         top: 5px;
-        right: 30px;
+        right: 7px;
         width: 11px;
         height: 11px;
         cursor: pointer;
+        filter: invert(89%) sepia(0%) saturate(28%) hue-rotate(288deg) brightness(91%) contrast(88%);
     }
 
-    &__weather-name {
+    &__weatherName {
         color: $c-darklight-red
     }
 
@@ -117,7 +119,6 @@
 
     &__whpRTL>p {
         margin: 0 0 5px 0;
-        /* direction: rtl; */
         text-align: right;
     }
 
@@ -144,9 +145,10 @@
     }
 }
 
-.isDefault{
-    color: #8D8D8D;
+.isDefault {
+    color: $c-light-gray;
 }
-.isActive{
-    color: black;
+
+.isActive {
+    color: $c-black;
 }

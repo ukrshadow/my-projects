@@ -1,25 +1,20 @@
-import { Header } from "../Header"
-import { Search } from "../Search"
-import { WeatherLayout } from "../WeatherLayout"
+import { Header } from '../Header'
+import { Search } from '../Search'
+import { WeatherList } from '../WeatherList'
 import styles from './styles.module.scss'
 import '../../i18n'
 
 function App() {
-
-  return ( 
-   <>
-      <header>
-        <div className={styles.container}>
-          <Header />
-        </div>
-      </header>
+  return (
+    <>
+      <Header />
       <main>
         <div className={styles.container}>
           <Search />
-          <WeatherLayout />
+          <WeatherList />
         </div>
       </main>
-      </>
+    </>
   )
 }
 
