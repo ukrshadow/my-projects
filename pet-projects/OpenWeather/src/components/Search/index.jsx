@@ -17,8 +17,9 @@ export const Search = () => {
     const options = []
     try {
       fetch(`${import.meta.env.VITE_APP_API_SEARCH_CITY_URL}city?name=${value}&limit=5`, {
-        headers: { 'X-Api-Key': import.meta.env.VITE_APP_SEARCH_CITY_KEY },
+        headers: { 'X-Api-Key': 'kFTkccWhihXHzLMJ5YJUQiUcl0pZnyKzD1eHDbv3' },
         contentType: 'application/json',
+        method: 'GET',
       })
         .then(res => res.json())
         .then(data => {
